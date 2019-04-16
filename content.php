@@ -24,7 +24,7 @@
                         <th>Stok</th>
                       </tr>
                       <tr>
-                        <td><input type="radio" name="id" id=""></td>
+                        <td><input type="checkbox" name="id" class="flat-red"></td>
                         <td>O-001</td>
                         <td>Amitanol</td>
                         <td>
@@ -34,7 +34,7 @@
                         <td>20</td>
                       </tr>
                       <tr>
-                        <td><input type="radio" name="id" id=""></td>
+                        <td><input type="checkbox" name="id" class="flat-red"></td>
                         <td>O-002</td>
                         <td>Parasetamol</td>
                         <td>
@@ -44,7 +44,7 @@
                         <td>14</td>
                       </tr>
                       <tr>
-                        <td><input type="radio" name="id" id=""></td>
+                        <td><input type="checkbox" name="id" class="flat-red"></td>
                         <td>O-003</td>
                         <td>Ethanol</td>
                         <td>
@@ -54,7 +54,7 @@
                         <td>10</td>
                       </tr>
                       <tr>
-                        <td><input type="radio" name="id" id=""></td>
+                        <td><input type="checkbox" name="id" class="flat-red"></td>
                         <td>O-004</td>
                         <td>Alcohol</td>
                         <td>

@@ -8,7 +8,7 @@
   <footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-      Anything you want
+      
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
@@ -23,9 +23,25 @@
 <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- iCheck 1.0.1 -->
+<script src="assets/plugins/iCheck/icheck.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
 
+<script>
+$(document).ready(function() {
+    $('table tr').on('click', function() {
+      $('input[name="id"').iCheck('uncheck');
+      $(this).find('input').iCheck('check');
+    });
+
+    //Flat red color scheme for iCheck
+    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass   : 'iradio_flat-green'
+    })
+});
+</script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
