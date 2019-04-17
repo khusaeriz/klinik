@@ -6,15 +6,15 @@
                     <h3 class="box-title">Table Data Obat</h3>
                     <hr/>
                     <div>
-                      <button class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</button>
+                      <a href="tambah.php" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
                       <button class="btn btn-warning"><i class="fa fa-edit"></i> Edit</button>
-                      <button class="btn btn-primary"><i class="fa fa-print"></i> Cetak</button>
+                      <!-- <button class="btn btn-primary"><i class="fa fa-print"></i> Cetak</button> -->
                       <button class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</button>
                     </div>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body">
-                    <table class="table table-bordered">
+                    <table class="table table-hover table-bordered table-selectable">
                       <tbody><tr>
                         <th style="width: 10px"></th>
                         <th>Kd. Obat</th>
@@ -24,7 +24,7 @@
                         <th>Stok</th>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" name="id" class="flat-red"></td>
+                        <td><input type="checkbox" name="id" class="flat-green"></td>
                         <td>O-001</td>
                         <td>Amitanol</td>
                         <td>
@@ -34,7 +34,7 @@
                         <td>20</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" name="id" class="flat-red"></td>
+                        <td><input type="checkbox" name="id" class="flat-green"></td>
                         <td>O-002</td>
                         <td>Parasetamol</td>
                         <td>
@@ -44,7 +44,7 @@
                         <td>14</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" name="id" class="flat-red"></td>
+                        <td><input type="checkbox" name="id" class="flat-green"></td>
                         <td>O-003</td>
                         <td>Ethanol</td>
                         <td>
@@ -54,7 +54,7 @@
                         <td>10</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" name="id" class="flat-red"></td>
+                        <td><input type="checkbox" name="id" class="flat-green"></td>
                         <td>O-004</td>
                         <td>Alcohol</td>
                         <td>

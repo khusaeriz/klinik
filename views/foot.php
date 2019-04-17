@@ -11,7 +11,7 @@
       
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2019 <a href="#">Klinik Gaharu Medika</a>.</strong> All rights reserved.
   </footer>
 
 </div>
@@ -30,13 +30,14 @@
 
 <script>
 $(document).ready(function() {
-    $('table tr').on('click', function() {
+    $('table.table-selectable tr').on('click', function() {
       $('input[name="id"').iCheck('uncheck');
+      
       $(this).find('input').iCheck('check');
     });
 
     //Flat red color scheme for iCheck
-    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+    $('input[type="checkbox"].flat-green, input[type="radio"].flat-green').iCheck({
       checkboxClass: 'icheckbox_flat-green',
       radioClass   : 'iradio_flat-green'
     })
