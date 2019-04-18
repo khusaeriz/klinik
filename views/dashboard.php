@@ -5,7 +5,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+              <h3>3</h3>
 
               <p>Data Dokter</p>
             </div>
@@ -20,7 +20,7 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>53</h3>
+              <h3>13</h3>
 
               <p>Data Obat</p>
             </div>
@@ -48,7 +48,15 @@
       </div>
       <!-- /.row -->
       <!-- Main row -->
-      <div class="row">
-       
+        <div class="row">
+          <div class="col-lg-12">
+              <div class="box">
+                  <div class="box-body">
+                    <h2>Selamat Datang di Aplikasi Rekam Medis</h2>
+                    <hr/>
+
+                  </div>
+              </div>
+          </div>
       </div>
       <!-- /.row (main row) -->
