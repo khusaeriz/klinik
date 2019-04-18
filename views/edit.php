@@ -12,21 +12,21 @@
                             <label class="col-sm-3 control-label">Kode Obat</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Kode Obat">
+                            <input type="text" class="form-control" placeholder="Kode Obat" value="O-001">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Harga Obat</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Harga Obat">
+                            <input type="text" class="form-control" placeholder="Harga Obat" value="30000">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Tgl. Expired</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Tgl. Expired">
+                            <input type="text" class="form-control" placeholder="Tgl. Expired" value="22/01/2020">
                             </div>
                         </div>
                     </div>
@@ -35,14 +35,14 @@
                             <label class="col-sm-3 control-label">Nama Obat</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Nama Obat">
+                            <input type="text" class="form-control" placeholder="Nama Obat" value="Amitanol">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Stok Obat</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Stok Obat">
+                            <input type="text" class="form-control" placeholder="Stok Obat" value="20">
                             </div>
                         </div>
                     </div>
