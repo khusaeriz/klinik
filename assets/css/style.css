@@ -6,3 +6,15 @@
 .my-5 {
     margin: 0 5px;
 }
+
+.bg-white {
+    background: #fff;
+}
+
+.border-top {
+    border-radius: 10px 10px 0 0;
+}
+
+.border-bottom {
+    border-radius: 0 0 10px 10px;
+}

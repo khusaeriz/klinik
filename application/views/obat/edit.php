@@ -2,7 +2,7 @@
     <div class="col-lg-12">
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Tambah Data Obat</h3>
+                <h3 class="box-title"><i class="fa fa-plus-square-o"></i> Edit Data Obat</h3>
             </div>
             <div class="box-body">
                 <form action="#" method="post" class="form-horizontal">

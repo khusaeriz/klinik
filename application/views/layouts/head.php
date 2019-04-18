@@ -10,20 +10,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>Klinik Gaharu Medika</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="assets/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/Ionicons/css/ionicons.min.css">
   <!-- iCheck for checkboxes and radio inputs -->
-  <link rel="stylesheet" href="assets/plugins/iCheck/all.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/iCheck/all.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
-  <link rel="stylesheet" href="dist/css/skins/skin-green.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>dist/css/skins/skin-green.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -101,11 +101,12 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">NAVIGASI</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-        <li><a href="#"><i class="fa fa-user"></i> <span>Data Dokter</span></a></li>
-        <li><a href="#"><i class="fa fa-plus-square-o"></i> <span>Data Obat</span></a></li>
-        <li><a href="#"><i class="fa fa-stethoscope"></i> <span>Data Pemeriksaan</span></a></li>
-        <li><a href="#"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
+        <li class="active"><a href="<?php echo base_url('dashboard') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li><a href="<?php echo base_url('dokter') ?>"><i class="fa fa-user-md"></i> <span>Data Dokter</span></a></li>
+        <li><a href="<?php echo base_url('pasien') ?>"><i class="fa fa-users"></i> <span>Data Pasien</span></a></li>
+        <li><a href="<?php echo base_url('obat') ?>"><i class="fa fa-plus-square-o"></i> <span>Data Obat</span></a></li>
+        <li><a href="<?php echo base_url('pemeriksaan') ?>"><i class="fa fa-stethoscope"></i> <span>Data Pemeriksaan</span></a></li>
+        <li><a href="<?php echo base_url('auth/logout') ?>"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -117,7 +118,7 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <img src="dist/img/logo.png" alt="Logo" style="width:50px"> Klinik Gaharu Medika
+        <a href="<?php echo base_url() ?>"><img src="<?php echo base_url() ?>dist/img/logo.png" alt="Logo" style="width:50px"> Klinik Gaharu Medika</a>
         <!-- <small>Optional description</small> -->
       </h1>
       <!-- <ol class="breadcrumb">

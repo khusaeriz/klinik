@@ -51,11 +51,26 @@
         <div class="row">
           <div class="col-lg-12">
               <div class="box">
-                  <div class="box-body">
-                    <h2>Selamat Datang di Aplikasi Rekam Medis</h2>
-                    <hr/>
-
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Fitur-fitur Aplikasi Klinik</h3>
                   </div>
+                  <div class="box-body">
+                Akses dibagi menjadi 2 level, untuk mempermudah pengolahan data klinik, diantaranya: <br><br>
+                      <ol>
+                            <li><b>Akses Admin</b></li>
+                      <ol>
+                      <li>Input data dokter</li>
+                      <li>Input data pasien</li>
+                      <li>Input data obat</li>
+                      </ol>
+                            <li><b>Akses Dokter</b></li>
+                      <ol>
+                      <li>Input data pemeriksaan</li>
+                      <li>Input data resep</li>
+                      
+                      </ol>
+                          </ol>
+                    </div>
               </div>
           </div>
       </div>

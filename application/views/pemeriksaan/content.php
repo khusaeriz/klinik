@@ -3,13 +3,13 @@
           <div class="col-lg-12">
               <div class="box">
                   <div class="box-header with-border">
-                    <h3 class="box-title">Table Data Obat</h3>
+                    <h3 class="box-title"><i class="fa fa-stethoscope"></i> Table Data Pemeriksaan</h3>
                     <hr/>
                     <div>
-                      <a href="tambah.php" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
-                      <button class="btn btn-warning"><i class="fa fa-edit"></i> Edit</button>
+                      <a href="<?php echo base_url('Obat/tambah') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
+                      <a data-href="<?php echo base_url('Obat/edit/'); ?>" class="btn btn-warning replace-url"><i class="fa fa-edit"></i> Edit</a>
                       <!-- <button class="btn btn-primary"><i class="fa fa-print"></i> Cetak</button> -->
-                      <button class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</button>
+                      <a data-href="<?php echo base_url('Obat/hapus/'); ?>" class="btn btn-danger replace-url"><i class="fa fa-trash"></i> Hapus</a>
                     </div>
                   </div>
                   <!-- /.box-header -->
@@ -24,7 +24,7 @@
                         <th>Stok</th>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" name="id" class="flat-green"></td>
+                        <td><input type="radio" name="id" class="flat-green"></td>
                         <td>O-001</td>
                         <td>Amitanol</td>
                         <td>
@@ -34,7 +34,7 @@
                         <td>20</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" name="id" class="flat-green"></td>
+                        <td><input type="radio" name="id" class="flat-green"></td>
                         <td>O-002</td>
                         <td>Parasetamol</td>
                         <td>
@@ -44,7 +44,7 @@
                         <td>14</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" name="id" class="flat-green"></td>
+                        <td><input type="radio" name="id" class="flat-green"></td>
                         <td>O-003</td>
                         <td>Ethanol</td>
                         <td>
@@ -54,7 +54,7 @@
                         <td>10</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" name="id" class="flat-green"></td>
+                        <td><input type="radio" name="id" class="flat-green"></td>
                         <td>O-004</td>
                         <td>Alcohol</td>
                         <td>
