@@ -5,14 +5,14 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>3</h3>
+              <h3><?php echo $count['dokter'] ?></h3>
 
               <p>Data Dokter</p>
             </div>
             <div class="icon">
               <i class="fa fa-user"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('dokter') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -20,14 +20,14 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>13</h3>
+              <h3><?php echo $count['obat'] ?></h3>
 
               <p>Data Obat</p>
             </div>
             <div class="icon">
               <i class="fa fa-plus-square-o"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('obat') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -35,14 +35,14 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
+              <h3><?php echo 0 ?></h3>
 
               <p>Data Pemeriksaan</p>
             </div>
             <div class="icon">
               <i class="fa fa-stethoscope"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('pemeriksaan') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
       </div>

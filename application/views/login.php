@@ -30,7 +30,7 @@
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
-  <div class="login-logo bg-white border-top" >
+  <div class="login-logo bg-white border-top pb-20" >
     <img src="<?php echo base_url('dist/') ?>img/logo.png" width="100px" class="text-center">
     <br>
     <a href="#"><b>Klinik Gaharu Medika</b></a>

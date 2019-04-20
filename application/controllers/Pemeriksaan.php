@@ -10,7 +10,7 @@ class Pemeriksaan extends CI_Controller
     public function index()
     {
         $this->load->view('layouts/head');
-        // $this->load->view('pemeriksaan/content');
+        $this->load->view('pemeriksaan/content');
         $this->load->view('layouts/foot');
     }
 

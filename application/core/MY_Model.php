@@ -208,6 +208,31 @@ class MY_Model extends CI_Model {
 		}
 	}
 
+	public function count_all()
+	{
+		$query = $this->db->count_all_results($this->table);
+
+		return $query;
+	}
+
+	public function search($param, $limit = 100)
+	{
+		$c = 0;
+		foreach ($param as $key => $value) {
+			if ($c === 0) {
+				$this->db->like($key, $value);	
+			} else {
+				$this->db->or_like($key, $value);
+			}
+		}
+
+		$this->select();
+		$this->db->limit($limit);
+		$query = $this->db->get($this->table);
+
+		return $query->result();
+	}
+
 	/**
 	 * execute insert batch query
 	 * @param  array

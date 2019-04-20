@@ -25,6 +25,8 @@
 <script src="<?php echo base_url() ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- iCheck 1.0.1 -->
 <script src="<?php echo base_url() ?>assets/plugins/iCheck/icheck.min.js"></script>
+<!-- Select2 -->
+<script src="<?php echo base_url() ?>assets/bower_components/select2/dist/js/select2.full.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url() ?>dist/js/adminlte.min.js"></script>
 
@@ -54,10 +56,10 @@ $(document).ready(function() {
     });
 
     $('input[type="checkbox"].flat-green, input[type="radio"].flat-green').on('ifChecked', function (e) {
-      console.log(e.target);      
     });
 });
 </script>
+<script src="<?php echo base_url() ?>assets/js/main.js"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->

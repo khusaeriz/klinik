@@ -17,6 +17,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/Ionicons/css/ionicons.min.css">
   <!-- iCheck for checkboxes and radio inputs -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/iCheck/all.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/select2/dist/css/select2.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url() ?>dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -33,8 +35,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <![endif]-->
 
   <!-- Google Font -->
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <script>window.baseUrl = '<?php echo base_url() ?>' ;</script>
 </head>
 <!--
 BODY TAG OPTIONS:

@@ -18,3 +18,15 @@
 .border-bottom {
     border-radius: 0 0 10px 10px;
 }
+
+.pb-20 {
+    padding-bottom: 20px;
+}
+
+.btn-in-select2 {
+    padding: 6px;
+    height: 20px;
+    display: inline-table;
+    width: 100%;
+    text-align: center;
+}

@@ -20,8 +20,14 @@ class Dashboard extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->model(['Dokter_model', 'Obat_model', 'Pemeriksaan_model']);
+
+		$data['count']['dokter'] 		= $this->Dokter_model->count_all();
+		$data['count']['obat'] 			= $this->Obat_model->count_all();
+		// $data['count']['pemeriksaan'] 	= $this->Pemeriksaan_model->count_all();
+		
 		$this->load->view('layouts/head');
-		$this->load->view('dashboard');
+		$this->load->view('dashboard', $data);
 		$this->load->view('layouts/foot');
 	}
 }
