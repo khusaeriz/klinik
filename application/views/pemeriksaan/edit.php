@@ -5,21 +5,21 @@
                     <h3 class="box-title"><i class="fa fa-stethoscope"></i> Edit Data Pemeriksaan</h3>
             </div>
             <div class="box-body">
-                <form action="#" method="post" class="form-horizontal">
+                <form action="<?php echo base_url('pemeriksaan/edit') ?>" method="post" class="form-horizontal">
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Kode Obat</label>
+                            <label class="col-sm-3 control-label">Kode Pemeriksaan</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Kode Obat" value="O-001">
+                            <input type="text" class="form-control" placeholder="Kode Pemeriksaan" value="<?php echo $d->kd_pemeriksaan ?>" readonly>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Harga Obat</label>
+                            <label class="col-sm-3 control-label"></label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Harga Obat" value="30000">
+                            <input type="text" class="form-control" placeholder="" value="30000">
                             </div>
                         </div>
                         <div class="form-group">

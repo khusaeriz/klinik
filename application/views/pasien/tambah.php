@@ -9,40 +9,55 @@
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Kode Obat</label>
+                            <label class="col-sm-3 control-label">Kode Pasien</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Kode Obat">
+                            <input type="text" name="kd_pasien" class="form-control" placeholder="Auto Generate" readonly>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Harga Obat</label>
+                            <label class="col-sm-3 control-label">Nama Pasien</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Harga Obat">
+                            <input type="text" name="nama" class="form-control" placeholder="Nama Pasien" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Tgl. Expired</label>
+                            <label class="col-sm-3 control-label">Jenis Kelamin</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Tgl. Expired">
+                                <input type="radio" name="jk" class="flat-green" value="L" id="jk_l" required> <label for="jk_l" class="font-light">Laki-laki</label>
+                                &nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="jk" class="flat-green" value="P" id="jk_p" required> <label for="jk_p" class="font-light">Perempuan</label>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Nama Obat</label>
+                            <label class="col-sm-3 control-label">Golongan Darah</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Nama Obat">
+                                <input type="radio" name="gol_darah" class="flat-green" value="A" id="gol-a"> <label for="gol-a" class="font-light">A</label>
+                                &nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="gol_darah" class="flat-green" value="B" id="gol-b"> <label for="gol-b" class="font-light">B</label>
+                                &nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="gol_darah" class="flat-green" value="AB" id="gol-ab"> <label for="gol-ab" class="font-light">AB</label>
+                                &nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="gol_darah" class="flat-green" value="O" id="gol-o"> <label for="gol-o" class="font-light">O</label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Stok Obat</label>
+                            <label class="col-sm-3 control-label">Tanggal Lahir</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Stok Obat">
+                            <input type="date" name="tgl_lahir" class="form-control" placeholder="Tanggal Lahir">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Alamat</label>
+
+                            <div class="col-sm-9">
+                                <textarea name="alamat" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>

@@ -5,14 +5,14 @@
                     <h3 class="box-title"><i class="fa fa-stethoscope"></i> Tambah Data Pemeriksaan</h3>
             </div>
             <div class="box-body">
-                <form action="#" method="post" class="form-horizontal">
+                <form action="<?php echo base_url('pemeriksaan/insert'); ?>" method="post" class="form-horizontal">
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Kode Pemeriksaan</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Kode Pemeriksaan">
+                            <input type="text" class="form-control" placeholder="Auto Generate" readonly>
                             </div>
                         </div>
                         <div class="form-group">
@@ -26,7 +26,7 @@
                             <label class="col-sm-3 control-label">Pasien</label>
 
                             <div class="col-sm-9">
-                                <select name="pasien" class="select2-pasien form-control"></select>
+                                <select name="kd_pasien" class="select2-pasien form-control" id="select-pasien"></select>
                             </div>
                         </div>
                     </div>
@@ -43,6 +43,11 @@
 
                             <div class="col-sm-9">
                                 <textarea name="resep" class="form-control"></textarea>
+                                <!-- <select name="resep[]" class="form-control select2-obat" multiple>
+                                <?php //foreach($obat as $key => $value): ?>
+                                    <option value="<?php echo $value->kd_obat ?>"><?php echo $value->nama ?></option>
+                                <?php //endforeach; ?>
+                                </select> -->
                             </div>
                         </div>
                     </div>
@@ -81,7 +86,7 @@
                     <label class="col-sm-3 control-label">Kode Pasien</label>
 
                     <div class="col-sm-9">
-                    <input type="text" name="kd_pasien" class="form-control" placeholder="Kode Pasien">
+                    <input type="text" name="kd_pasien" class="form-control" placeholder="Auto Generate" readonly>
                     </div>
                 </div>
                 <div class="form-group">
@@ -120,13 +125,13 @@
                     <label class="col-sm-3 control-label">Golongan Darah</label>
 
                     <div class="col-sm-9">
-                        <input type="radio" name="gol" class="flat-green" value="A" id="gol-a"> <label for="gol-a" class="font-light">A</label>
+                        <input type="radio" name="gol_darah" class="flat-green" value="A" id="gol-a"> <label for="gol-a" class="font-light">A</label>
                         &nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="gol" class="flat-green" value="B" id="gol-b"> <label for="gol-b" class="font-light">B</label>
+                        <input type="radio" name="gol_darah" class="flat-green" value="B" id="gol-b"> <label for="gol-b" class="font-light">B</label>
                         &nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="gol" class="flat-green" value="AB" id="gol-ab"> <label for="gol-ab" class="font-light">AB</label>
+                        <input type="radio" name="gol_darah" class="flat-green" value="AB" id="gol-ab"> <label for="gol-ab" class="font-light">AB</label>
                         &nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="gol" class="flat-green" value="O" id="gol-o"> <label for="gol-o" class="font-light">O</label>
+                        <input type="radio" name="gol_darah" class="flat-green" value="O" id="gol-o"> <label for="gol-o" class="font-light">O</label>
                     </div>
                 </div>
             </div>

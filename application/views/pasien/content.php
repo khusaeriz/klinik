@@ -6,10 +6,10 @@
                 <h3 class="box-title"><i class="fa fa-users"></i> Tambah Data Pasien</h3>
                     <hr/>
                     <div>
-                      <a href="<?php echo base_url('Obat/tambah') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
-                      <a data-href="<?php echo base_url('Obat/edit/'); ?>" class="btn btn-warning replace-url"><i class="fa fa-edit"></i> Edit</a>
+                      <a href="<?php echo base_url('Pasien/tambah') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
+                      <a data-href="<?php echo base_url('Pasien/edit/'); ?>" class="btn btn-warning replace-url"><i class="fa fa-edit"></i> Edit</a>
                       <!-- <button class="btn btn-primary"><i class="fa fa-print"></i> Cetak</button> -->
-                      <a data-href="<?php echo base_url('Obat/hapus/'); ?>" class="btn btn-danger replace-url"><i class="fa fa-trash"></i> Hapus</a>
+                      <a data-href="<?php echo base_url('Pasien/hapus/'); ?>" class="btn btn-danger replace-url"><i class="fa fa-trash"></i> Hapus</a>
                     </div>
                   </div>
                   <!-- /.box-header -->
@@ -17,52 +17,24 @@
                     <table class="table table-hover table-bordered table-selectable">
                       <tbody><tr>
                         <th style="width: 10px"></th>
-                        <th>Kd. Obat</th>
-                        <th>Nama Obat</th>
-                        <th>Harga</th>
-                        <th>Tgl Expired</th>
-                        <th>Stok</th>
+                        <th>Kd. Pasien</th>
+                        <th>Nama Pasien</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Tgl Lahir/Umur</th>
+                        <th>Gol. Darah</th>
                       </tr>
+                      <?php foreach ($pasien as $key => $value) : ?>
                       <tr>
-                        <td><input type="radio" name="id" class="flat-green"></td>
-                        <td>O-001</td>
-                        <td>Amitanol</td>
-                        <td>
-                          Rp. 30.000,00
-                        </td>
-                        <td>22/01/2020</td>
-                        <td>20</td>
+                        <td><input type="radio" name="id" data-id="<?php echo $value->kd_pasien?>" class="flat-green"></td>
+                        <td><?php echo $value->kd_pasien ?></td>
+                        <td><?php echo $value->nama ?></td>
+                        <td><?php echo $value->jk ?></td>
+                        <td><?php
+                          echo $value->tgl_lahir."/".$value->umur." thn";
+                        ?></td>
+                        <td><?php echo $value->gol_darah == "" ? "-" : $value->gol_darah ?></td>
                       </tr>
-                      <tr>
-                        <td><input type="radio" name="id" class="flat-green"></td>
-                        <td>O-002</td>
-                        <td>Parasetamol</td>
-                        <td>
-                            Rp. 30.000,00
-                        </td>
-                        <td>22/01/2020</td>
-                        <td>14</td>
-                      </tr>
-                      <tr>
-                        <td><input type="radio" name="id" class="flat-green"></td>
-                        <td>O-003</td>
-                        <td>Ethanol</td>
-                        <td>
-                            Rp. 30.000,00
-                        </td>
-                        <td>22/01/2020</td>
-                        <td>10</td>
-                      </tr>
-                      <tr>
-                        <td><input type="radio" name="id" class="flat-green"></td>
-                        <td>O-004</td>
-                        <td>Alcohol</td>
-                        <td>
-                            Rp. 30.000,00
-                        </td>
-                        <td>22/01/2020</td>
-                        <td>7</td>
-                      </tr>
+                      <?php endforeach; ?>
                     </tbody></table>
                   </div>
                   <!-- /.box-body -->

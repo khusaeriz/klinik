@@ -18,49 +18,21 @@
                       <tbody><tr>
                         <th style="width: 10px"></th>
                         <th>Kd. Pemeriksaan</th>
-                        <th>Nama Pasien</th>
+                        <th>Pasien</th>
+                        <th>Dokter</th>
                         <th>Hasil Pemeriksaan</th>
                         <th>Resep</th>
                       </tr>
+                      <?php foreach($pemeriksaan as $key => $value): ?>
                       <tr>
-                        <td><input type="radio" name="id" class="flat-green"></td>
-                        <td>O-001</td>
-                        <td>Amitanol</td>
-                        <td>
-                          Rp. 30.000,00
-                        </td>
-                        <td>22/01/2020</td>
+                        <td><input type="radio" data-id="<?php echo $value->kd_pemeriksaan ?>" name="id" class="flat-green"></td>
+                        <td><?php echo $value->kd_pemeriksaan ?></td>
+                        <td><?php echo $value->nama_pasien ?></td>
+                        <td><?php echo $value->nama_dokter ?></td>
+                        <td><?php echo $value->hasil_pemeriksaan ?></td>
+                        <td><?php echo $value->resep ?></td>
                       </tr>
-                      <tr>
-                        <td><input type="radio" name="id" class="flat-green"></td>
-                        <td>O-002</td>
-                        <td>Parasetamol</td>
-                        <td>
-                            Rp. 30.000,00
-                        </td>
-                        <td>22/01/2020</td>
-                        <td>14</td>
-                      </tr>
-                      <tr>
-                        <td><input type="radio" name="id" class="flat-green"></td>
-                        <td>O-003</td>
-                        <td>Ethanol</td>
-                        <td>
-                            Rp. 30.000,00
-                        </td>
-                        <td>22/01/2020</td>
-                        <td>10</td>
-                      </tr>
-                      <tr>
-                        <td><input type="radio" name="id" class="flat-green"></td>
-                        <td>O-004</td>
-                        <td>Alcohol</td>
-                        <td>
-                            Rp. 30.000,00
-                        </td>
-                        <td>22/01/2020</td>
-                        <td>7</td>
-                      </tr>
+                      <?php endforeach; ?>
                     </tbody></table>
                   </div>
                   <!-- /.box-body -->

@@ -208,6 +208,11 @@ class MY_Model extends CI_Model {
 		}
 	}
 
+	/**
+	 * count all data in table
+	 * 
+	 * @return int
+	 */
 	public function count_all()
 	{
 		$query = $this->db->count_all_results($this->table);
@@ -215,6 +220,12 @@ class MY_Model extends CI_Model {
 		return $query;
 	}
 
+	/**
+	 * search data in table
+	 * @param array $param
+	 * @param int $limit
+	 * @return array
+	 */
 	public function search($param, $limit = 100)
 	{
 		$c = 0;
@@ -228,6 +239,7 @@ class MY_Model extends CI_Model {
 
 		$this->select();
 		$this->db->limit($limit);
+		$this->db->order_by($this->primary_key, 'desc');
 		$query = $this->db->get($this->table);
 
 		return $query->result();
