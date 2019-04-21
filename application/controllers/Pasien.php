@@ -30,7 +30,7 @@ class Pasien extends CI_Controller
     {
         $data['d'] = $this->Pasien_model->find_one($id);
 
-        if (empty($data)) {
+        if (empty($data['d'])) {
             redirect('pasien');
         }
         

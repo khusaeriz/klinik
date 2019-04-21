@@ -5,28 +5,29 @@
                 <h3 class="box-title"><i class="fa fa-plus-square-o"></i> Edit Data Obat</h3>
             </div>
             <div class="box-body">
-                <form action="#" method="post" class="form-horizontal">
+                <form action="<?php echo base_url('obat/update') ?>" method="post" class="form-horizontal">
+                <input type="hidden" name="kd_obat_old" value="<?php echo $d->kd_obat ?>">
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Kode Obat</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Kode Obat" value="O-001">
+                            <input type="text" name="kd_obat" class="form-control" placeholder="Kode Obat" value="<?php echo $d->kd_obat ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Harga Obat</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Harga Obat" value="30000">
+                            <input type="text" name="harga" class="form-control" placeholder="Harga Obat" value="<?php echo $d->harga ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Tgl. Expired</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Tgl. Expired" value="22/01/2020">
+                            <input type="date" name="tgl_expired" class="form-control" placeholder="Tgl. Expired" value="<?php echo $d->tgl_expired ?>">
                             </div>
                         </div>
                     </div>
@@ -35,14 +36,14 @@
                             <label class="col-sm-3 control-label">Nama Obat</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Nama Obat" value="Amitanol">
+                            <input type="text" name="nama" class="form-control" placeholder="Nama Obat" value="<?php echo $d->nama ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Stok Obat</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Stok Obat" value="20">
+                            <input type="text" name="stok" class="form-control" placeholder="Stok Obat" value="<?php echo $d->stok ?>">
                             </div>
                         </div>
                     </div>
