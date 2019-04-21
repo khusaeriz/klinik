@@ -5,7 +5,7 @@
                 <h3 class="box-title"><i class="fa fa-users"></i> Tambah Data Pasien</h3>
             </div>
             <div class="box-body">
-                <form action="#" method="post" class="form-horizontal">
+                <form action="<?php echo base_url('pasien/insert') ?>" method="post" class="form-horizontal">
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="form-group">

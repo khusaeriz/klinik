@@ -26,6 +26,15 @@ class Pasien extends CI_Controller
         $this->load->view('layouts/foot');
     }
 
+    public function insert()
+    {
+        $data = $this->input->post();
+        $data['kd_pasien'] = $this->Pasien_model->generate_kd_pasien();
+
+        $this->Pasien_model->insert($data);
+        redirect('pasien');
+    }
+
     public function edit($id)
     {
         $data['d'] = $this->Pasien_model->find_one($id);
@@ -50,6 +59,7 @@ class Pasien extends CI_Controller
 
     public function hapus($id)
     {
-        
+        $this->Pasien_model->delete($id);
+        redirect('pasien');
     }
 }
