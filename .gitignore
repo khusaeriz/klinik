@@ -1,2 +1,2 @@
 .vscode/*
-application/config/database.php
+.env.development
