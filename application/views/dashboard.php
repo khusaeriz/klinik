@@ -35,8 +35,7 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3><?php echo 0 ?></h3>
-
+              <h3><?php echo $count['pemeriksaan'] ?></h3>
               <p>Data Pemeriksaan</p>
             </div>
             <div class="icon">
