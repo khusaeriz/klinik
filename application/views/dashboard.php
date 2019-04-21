@@ -50,6 +50,9 @@
       <!-- Main row -->
         <div class="row">
           <div class="col-lg-12">
+              <div class="callout callout-info">
+                <p>Gunakan Google Chrome Untuk Pengalaman Terbaik.</p>
+              </div>
               <div class="box">
                   <div class="box-header with-border">
                     <h3 class="box-title">Fitur-fitur Aplikasi Klinik</h3>
