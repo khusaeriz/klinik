@@ -27,10 +27,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Spesialis</label>
+                            <label class="col-sm-3 control-label">Password</label>
 
                             <div class="col-sm-9">
-                            <input type="text" name="spesialis" class="form-control" placeholder="Spesialis" value="<?php echo $dokter->spesialis ?>">
+                            <input type="password" name="password" class="form-control" placeholder="Kosongkan jika tidak diubah">
                             </div>
                         </div>
                         <div class="form-group">
@@ -47,6 +47,13 @@
 
                             <div class="col-sm-9">
                             <input type="text" name="nama" class="form-control" placeholder="Nama Dokter" value="<?php echo $dokter->nama ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Spesialis</label>
+
+                            <div class="col-sm-9">
+                            <input type="text" name="spesialis" class="form-control" placeholder="Spesialis" value="<?php echo $dokter->spesialis ?>">
                             </div>
                         </div>
                         <div class="form-group">

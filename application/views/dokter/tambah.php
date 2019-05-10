@@ -25,10 +25,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Spesialis</label>
+                            <label class="col-sm-3 control-label">Password</label>
 
                             <div class="col-sm-9">
-                            <input type="text" name="spesialis" class="form-control" placeholder="Spesialis">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
                             </div>
                         </div>
                         <div class="form-group">
@@ -45,6 +45,13 @@
 
                             <div class="col-sm-9">
                             <input type="text" name="nama" class="form-control" placeholder="Nama Dokter" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Spesialis</label>
+
+                            <div class="col-sm-9">
+                            <input type="text" name="spesialis" class="form-control" placeholder="Spesialis">
                             </div>
                         </div>
                         <div class="form-group">

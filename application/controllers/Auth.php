@@ -19,6 +19,21 @@ class Auth extends CI_Controller
     public function check()
     {
         // ini buat check user
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+        $check    = $this->db->where(array(
+            'username' => $username, 
+            'password' => md5($password)
+            )
+        )->get('user');
+
+        if ($check->num_rows() > 0) {
+            $this->session->set_userdata('user', $check->row());
+
+            redirect('dashboard');
+        }
+        
+        redirect('auth/login');
     }
 
     public function logout()
