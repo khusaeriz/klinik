@@ -13,7 +13,7 @@
                     </div>
                   </div>
                   <!-- /.box-header -->
-                  <div class="box-body">
+                  <div class="box-body table-responsive">
                     <table class="table table-hover table-bordered table-selectable">
                       <tbody><tr>
                         <th style="width: 10px"></th>
