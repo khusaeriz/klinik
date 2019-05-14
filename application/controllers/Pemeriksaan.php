@@ -31,22 +31,25 @@ class Pemeriksaan extends CI_Controller
     {
         $data = $this->input->post();
         $data['kd_pemeriksaan'] = $this->Pemeriksaan_model->generate_kd_pemeriksaan();
-
+        $data['resep'] = json_encode($data['resep']);
+        
         $this->Pemeriksaan_model->insert($data);
 
         redirect('pemeriksaan');
     }
 
-    public function edit($id)
+    public function detail($id)
     {
-        $data['d'] = $this->Pemeriksaan_model->find_one($id);
-
+        $data['d'] = $this->Pemeriksaan_model->get_detail($id);
+        
+        $data['d']->obat = $this->Obat_model->get_in(json_decode($data['d']->resep, false));
+        // print_r($data['d']);
         if (empty($data)) {
             redirect('pemeriksaan');
         }
 
         $this->load->view('layouts/head');
-        $this->load->view('pemeriksaan/edit', $data);
+        $this->load->view('pemeriksaan/detail', $data);
         $this->load->view('layouts/foot');
     }
 

@@ -57,6 +57,8 @@ $(document).ready(function() {
 
     $('input[type="checkbox"].flat-green, input[type="radio"].flat-green').on('ifChecked', function (e) {
     });
+
+    $('.select2').select2();
 });
 </script>
 <script src="<?php echo base_url() ?>assets/js/main.js"></script>

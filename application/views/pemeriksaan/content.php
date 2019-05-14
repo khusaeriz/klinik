@@ -7,8 +7,8 @@
                     <hr/>
                     <div>
                       <a href="<?php echo base_url('Pemeriksaan/tambah') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
-                      <!-- <a data-href="<?php echo base_url('Pemeriksaan/edit/'); ?>" class="btn btn-warning replace-url"><i class="fa fa-edit"></i> Edit</a> -->
-                      <!-- <button class="btn btn-primary"><i class="fa fa-print"></i> Cetak</button> -->
+                      <a data-href="<?php echo base_url('Pemeriksaan/detail/'); ?>" class="btn btn-warning replace-url"><i class="fa fa-eye"></i> Detail</a>
+                      <!-- <a class="btn btn-warning" href=""><i class="fa fa-eye"></i> Detail</a> -->
                       <a data-href="<?php echo base_url('Pemeriksaan/hapus/'); ?>" class="btn btn-danger replace-url"><i class="fa fa-trash"></i> Hapus</a>
                     </div>
                   </div>
@@ -20,8 +20,9 @@
                         <th>Kd. Pemeriksaan</th>
                         <th>Pasien</th>
                         <th>Dokter</th>
+                        <!-- <th>Biaya Pemeriksaan</th> -->
                         <th>Hasil Pemeriksaan</th>
-                        <th>Resep</th>
+                        <!-- <th>Resep</th> -->
                       </tr>
                       <?php foreach($pemeriksaan as $key => $value): ?>
                       <tr>
@@ -29,8 +30,9 @@
                         <td><?php echo $value->kd_pemeriksaan ?></td>
                         <td><?php echo $value->nama_pasien ?></td>
                         <td><?php echo $value->nama_dokter ?></td>
+                        <!-- <td>Rp. <?php echo number_format($value->biaya, 0, ',', '.') ?></td> -->
                         <td><?php echo $value->hasil_pemeriksaan ?></td>
-                        <td><?php echo $value->resep ?></td>
+                        <!-- <td><?php echo $value->resep ?></td> -->
                       </tr>
                       <?php endforeach; ?>
                     </tbody></table>

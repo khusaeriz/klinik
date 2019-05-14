@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2019 at 10:51 AM
+-- Generation Time: May 14, 2019 at 07:43 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -64,7 +64,10 @@ CREATE TABLE `obat` (
 --
 
 INSERT INTO `obat` (`kd_obat`, `nama`, `harga`, `tgl_expired`, `stok`) VALUES
-('PR-2333', 'Paracetamol', 290002, '2020-12-31', 29);
+('AC-1', 'Acarbose', 40000, '2020-08-31', 4),
+('AM-1', 'Amitanol', 20000, '2021-12-31', 20),
+('AM-2', 'Ambroxol', 14000, '2022-09-28', 10),
+('PR-2333', 'Paracetamol', 29000, '2020-12-31', 29);
 
 -- --------------------------------------------------------
 
@@ -101,16 +104,38 @@ CREATE TABLE `pemeriksaan` (
   `kd_pasien` varchar(10) NOT NULL,
   `kd_dokter` varchar(10) NOT NULL,
   `hasil_pemeriksaan` text NOT NULL,
-  `resep` text NOT NULL
+  `resep` text NOT NULL,
+  `biaya` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pemeriksaan`
 --
 
-INSERT INTO `pemeriksaan` (`kd_pemeriksaan`, `kd_pasien`, `kd_dokter`, `hasil_pemeriksaan`, `resep`) VALUES
-('RM0002', 'P0001', 'THT-2', 'asd', 'asd'),
-('RM001', 'P0004', 'THT-2', 'asd', 'asd\r\n');
+INSERT INTO `pemeriksaan` (`kd_pemeriksaan`, `kd_pasien`, `kd_dokter`, `hasil_pemeriksaan`, `resep`, `biaya`) VALUES
+('RM0001', 'P0001', 'THT-2', 'Panas Dingin', '[\"AM-1\"]', 40000),
+('RM0002', 'P0001', 'THT-2', 'asd', 'asd', 90000),
+('RM0003', 'P0001', 'THT-2', 'suram', 'cari hidup', 50000),
+('RM0004', 'P0002', 'THT-2', 'Ada deh', '[\"AM-1\"]', 23232);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `nama` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`username`, `password`, `nama`) VALUES
+('admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrator');
 
 --
 -- Indexes for dumped tables
@@ -139,6 +164,12 @@ ALTER TABLE `pasien`
 --
 ALTER TABLE `pemeriksaan`
   ADD PRIMARY KEY (`kd_pemeriksaan`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables

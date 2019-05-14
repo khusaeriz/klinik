@@ -30,3 +30,7 @@
     width: 100%;
     text-align: center;
 }
+
+.skin-green .main-header .logo {
+    background: #222d32 !important;
+}

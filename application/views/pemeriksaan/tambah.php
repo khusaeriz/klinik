@@ -32,6 +32,13 @@
                     </div>
                     <div class="col-lg-5">
                         <div class="form-group">
+                            <label class="col-sm-3 control-label">Biaya</label>
+
+                            <div class="col-sm-9">
+                            <input type="number" name="biaya" class="form-control" placeholder="Rp. 000.000, 00" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="col-sm-3 control-label">Hasil Pemeriksaan</label>
 
                             <div class="col-sm-9">
@@ -42,7 +49,11 @@
                             <label class="col-sm-3 control-label">Resep</label>
 
                             <div class="col-sm-9">
-                                <textarea name="resep" class="form-control"></textarea>
+                                <select name="resep[]" class="form-control select2" multiple>
+                                    <?php foreach($obat as $key => $value): ?>
+                                        <option value="<?php echo $value->kd_obat ?>"><?php echo $value->nama ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                                 <!-- <select name="resep[]" class="form-control select2-obat" multiple>
                                 <?php //foreach($obat as $key => $value): ?>
                                     <option value="<?php echo $value->kd_obat ?>"><?php echo $value->nama ?></option>
