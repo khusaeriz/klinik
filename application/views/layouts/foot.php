@@ -41,10 +41,10 @@ $(document).ready(function() {
       $('.replace-url').each(function(index, el){
         
         if (id === undefined) {
-          $(el).removeAttr('href');
+          $(el).removeAttr('href').attr('disabled', true);
         } else {
           var link = $(el).data('href')+id;
-          $(el).attr('href', link);
+          $(el).attr('href', link).attr('disabled', false);
         }
       });
     });

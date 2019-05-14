@@ -7,9 +7,9 @@
                     <hr/>
                     <div>
                       <a href="<?php echo base_url('Pemeriksaan/tambah') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
-                      <a data-href="<?php echo base_url('Pemeriksaan/detail/'); ?>" class="btn btn-warning replace-url"><i class="fa fa-eye"></i> Detail</a>
+                      <a data-href="<?php echo base_url('Pemeriksaan/detail/'); ?>" class="btn btn-warning replace-url" disabled="true"><i class="fa fa-eye"></i> Detail</a>
                       <!-- <a class="btn btn-warning" href=""><i class="fa fa-eye"></i> Detail</a> -->
-                      <a data-href="<?php echo base_url('Pemeriksaan/hapus/'); ?>" class="btn btn-danger replace-url"><i class="fa fa-trash"></i> Hapus</a>
+                      <a data-href="<?php echo base_url('Pemeriksaan/hapus/'); ?>" class="btn btn-danger replace-url" disabled="true"><i class="fa fa-trash"></i> Hapus</a>
                     </div>
                   </div>
                   <!-- /.box-header -->
