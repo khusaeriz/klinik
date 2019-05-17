@@ -57,18 +57,6 @@
                                 <input type="text" name="biaya" value="Rp. <?php echo number_format($total, 0, ',', '.') ?>" class="form-control" readonly>
                             </div>
                         </div>
-                        <!-- <div class="form-group">
-                            <label class="col-sm-3 control-label">Resep</label>
-
-                            <div class="col-sm-9">
-                                <textarea name="resep" class="form-control" readonly></textarea>
-                                <select name="resep[]" class="form-control select2-obat" multiple>
-                                <?php //foreach($obat as $key => $value): ?>
-                                    <option value="<?php echo $value->kd_obat ?>"><?php echo $value->nama ?></option>
-                                <?php //endforeach; ?>
-                                </select>
-                            </div>
-                        </div> -->
                     </div>
                     <div class="col-lg-6">
                         <!-- <label class="col-sm-3 control-label">Resep<br></label> -->

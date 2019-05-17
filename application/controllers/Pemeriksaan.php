@@ -55,6 +55,7 @@ class Pemeriksaan extends CI_Controller
 
     public function hapus($id)
     {
-        
+        $this->Pemeriksaan_model->delete($id);
+        redirect('pemeriksaan');
     }
 }

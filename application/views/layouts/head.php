@@ -99,6 +99,8 @@ desired effect
       </form> -->
       <!-- /.search form -->
 
+      <h4 style="color: #fff; padding: 0 20px">Selamat Datang, <?php echo $this->session->userdata('user')->nama ?></h4>
+
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">NAVIGASI</li>

@@ -9,7 +9,7 @@ class Pemeriksaan_model extends MY_Model
     public function generate_kd_pemeriksaan()
     {
         $num = $this->last_id();
-        $kd = "RM". str_pad($num+1, 4, "0", STR_PAD_LEFT);
+        $kd = "RM".date('y'). str_pad($num+1, 4, "0", STR_PAD_LEFT);
 
         return $kd;
     }
