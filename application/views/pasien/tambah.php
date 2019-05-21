@@ -26,9 +26,9 @@
                             <label class="col-sm-3 control-label">Jenis Kelamin</label>
 
                             <div class="col-sm-9">
-                                <input type="radio" name="jk" class="flat-green" value="L" id="jk_l" required> <label for="jk_l" class="font-light">Laki-laki</label>
+                                <input type="radio" name="jk" class="flat-green" value="L" id="jk_l" required> <label for="jk_l" class="font-light" required>Laki-laki</label>
                                 &nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="jk" class="flat-green" value="P" id="jk_p" required> <label for="jk_p" class="font-light">Perempuan</label>
+                                <input type="radio" name="jk" class="flat-green" value="P" id="jk_p" required> <label for="jk_p" class="font-light" required>Perempuan</label>
                             </div>
                         </div>
                     </div>

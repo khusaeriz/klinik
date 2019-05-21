@@ -19,14 +19,14 @@
                             <label class="col-sm-3 control-label">Kode Dokter</label>
 
                             <div class="col-sm-9">
-                                <select name="kd_dokter" class="select2-dokter form-control"></select>
+                                <select name="kd_dokter" class="select2-dokter form-control" required></select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Pasien</label>
 
                             <div class="col-sm-9">
-                                <select name="kd_pasien" class="select2-pasien form-control" id="select-pasien"></select>
+                                <select name="kd_pasien" class="select2-pasien form-control" id="select-pasien" required></select>
                             </div>
                         </div>
                     </div>
