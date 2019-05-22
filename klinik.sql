@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2019 at 07:43 AM
+-- Generation Time: May 22, 2019 at 06:28 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -116,7 +116,9 @@ INSERT INTO `pemeriksaan` (`kd_pemeriksaan`, `kd_pasien`, `kd_dokter`, `hasil_pe
 ('RM0001', 'P0001', 'THT-2', 'Panas Dingin', '[\"AM-1\"]', 40000),
 ('RM0002', 'P0001', 'THT-2', 'asd', 'asd', 90000),
 ('RM0003', 'P0001', 'THT-2', 'suram', 'cari hidup', 50000),
-('RM0004', 'P0002', 'THT-2', 'Ada deh', '[\"AM-1\"]', 23232);
+('RM0004', 'P0002', 'THT-2', 'Ada deh', '[\"AM-1\"]', 23232),
+('RM190005', 'P0001', 'ANK-1', 'kb', '[\"AM-2\",\"PR-2333\"]', 32999),
+('RM1990006', 'P0001', 'THT-2', '2132asd', '[\"AM-2\"]', 231231);
 
 -- --------------------------------------------------------
 
