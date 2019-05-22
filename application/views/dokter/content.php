@@ -6,10 +6,12 @@
                     <h3 class="box-title"><i class="fa fa-user-md"></i> Table Data Dokter</h3>
                     <hr/>
                     <div>
+					<?php if ($this->session->userdata('user')->role != 'dokter') :?>
                       <a href="<?php echo base_url('Dokter/tambah') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
                       <a data-href="<?php echo base_url('Dokter/edit/'); ?>" class="btn btn-warning replace-url" disabled="true"><i class="fa fa-edit"></i> Edit</a>
                       <!-- <button class="btn btn-primary"><i class="fa fa-print"></i> Cetak</button> -->
                       <a data-href="<?php echo base_url('Dokter/hapus/'); ?>" class="btn btn-danger replace-url" disabled="true"><i class="fa fa-trash"></i> Hapus</a>
+					<?php endif; ?>
                     </div>
                   </div>
                   <!-- /.box-header -->

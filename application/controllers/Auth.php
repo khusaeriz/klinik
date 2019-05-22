@@ -26,7 +26,7 @@ class Auth extends CI_Controller
             'password' => md5($password)
             )
         )->get('user');
-
+		
         if ($check->num_rows() > 0) {
             $this->session->set_userdata('user', $check->row());
 

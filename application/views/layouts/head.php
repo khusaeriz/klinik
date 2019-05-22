@@ -99,14 +99,17 @@ desired effect
       </form> -->
       <!-- /.search form -->
 
-      <h4 style="color: #fff; padding: 0 20px">Selamat Datang, <?php echo $this->session->userdata('user')->nama ?></h4>
+      <h4 style="color: #fff; padding: 0 20px">Selamat Datang,</br> <?php echo $this->session->userdata('user')->nama ?></h4>
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">NAVIGASI</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="<?php echo base_url('dashboard') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+		
+	<?php if ($this->session->userdata('user')->role != 'dokter') :?>
         <li><a href="<?php echo base_url('dokter') ?>"><i class="fa fa-user-md"></i> <span>Data Dokter</span></a></li>
+	<?php endif; ?>
         <li><a href="<?php echo base_url('pasien') ?>"><i class="fa fa-users"></i> <span>Data Pasien</span></a></li>
         <li><a href="<?php echo base_url('obat') ?>"><i class="fa fa-plus-square-o"></i> <span>Data Obat</span></a></li>
         <li><a href="<?php echo base_url('pemeriksaan') ?>"><i class="fa fa-stethoscope"></i> <span>Data Pemeriksaan</span></a></li>

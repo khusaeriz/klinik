@@ -6,10 +6,14 @@
                     <h3 class="box-title"><i class="fa fa-stethoscope"></i> Table Data Pemeriksaan</h3>
                     <hr/>
                     <div>
+					<?php if ($this->session->userdata('user')->role == 'dokter') :?>
                       <a href="<?php echo base_url('Pemeriksaan/tambah') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
+					<?php endif; ?>
                       <a data-href="<?php echo base_url('Pemeriksaan/detail/'); ?>" class="btn btn-warning replace-url" disabled="true"><i class="fa fa-eye"></i> Detail</a>
                       <!-- <a class="btn btn-warning" href=""><i class="fa fa-eye"></i> Detail</a> -->
+					<?php if ($this->session->userdata('user')->role == 'dokter') :?>
                       <a data-href="<?php echo base_url('Pemeriksaan/hapus/'); ?>" class="btn btn-danger replace-url" disabled="true"><i class="fa fa-trash"></i> Hapus</a>
+					<?php endif; ?>
                     </div>
                   </div>
                   <!-- /.box-header -->

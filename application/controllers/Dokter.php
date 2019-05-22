@@ -8,6 +8,7 @@ class Dokter extends CI_Controller
 
         $this->load->model('Dokter_model');
         $this->load->model('User_model');
+        $this->load->model('Pasien_model');
     }
 
     public function index()
