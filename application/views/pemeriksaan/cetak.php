@@ -1,5 +1,17 @@
+<html>
+<head>
+
+<link href="<?php echo base_url('assets/bootstrap-4.3.1-dist/css/bootstrap.css') ?>" rel="stylesheet">
+<link href="<?php echo base_url('dist/css/AdminLTE.css') ?>" rel="stylesheet">
+<link href="<?php echo base_url('dist/css/skins/skin-green.min.css') ?>" rel="stylesheet">
+<link href="<?php echo base_url('assets/css/style.css') ?>" rel="stylesheet">
+
+</head>
+
+<body onload="window.print()">
+<div class='container'>
 <div class="row">
-    <div class="col-lg-12">
+    <div class="col-sm-12">
         <div class="box">
             <div class="box-header with-border">
                     <h3 class="box-title"><i class="fa fa-stethoscope"></i> Detail Data Pemeriksaan</h3>
@@ -7,46 +19,46 @@
             <div class="box-body">
                 <form action="<?php echo base_url('pemeriksaan/insert'); ?>" method="post" class="form-horizontal">
                 <div class="row">
-                    <div class="col-lg-5">
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Kode Pemeriksaan</label>
+                    <div class="col-sm-6">
+                        <div class="form-group row">
+                            <label class="col-sm-4 control-label">Kode Pemeriksaan</label>
 
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                             <input type="text" class="form-control" value="<?php echo $d->kd_pemeriksaan ?>" placeholder="Auto Generate" readonly>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Kode Dokter</label>
+                        <div class="form-group row">
+                            <label class="col-sm-4 control-label">Kode Dokter</label>
 
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                                 <input type="text" name="kd_dokter" value="<?php echo $d->nama_dokter ?>" class=" form-control" readonly>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Pasien</label>
+                        <div class="form-group row">
+                            <label class="col-sm-4 control-label">Pasien</label>
 
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                                 <input name="kd_pasien" value="<?php echo $d->nama_pasien ?>" class=" form-control" id="select-pasien" readonly>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Biaya Pemeriksaan</label>
+                        <div class="form-group row">
+                            <label class="col-sm-4 control-label">Biaya Pemeriksaan</label>
 
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                             <input type="text" name="biaya" value="Rp. <?php echo number_format($d->biaya, 0, ',', '.') ?>" class="form-control" readonly>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Hasil Pemeriksaan</label>
+                        <div class="form-group row">
+                            <label class="col-sm-4 control-label">Hasil Pemeriksaan</label>
 
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                                 <textarea name="hasil_pemeriksaan" class="form-control" readonly><?php echo $d->hasil_pemeriksaan ?> </textarea>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Total Biaya</label>
+                        <div class="form-group row">
+                            <label class="col-sm-4 control-label">Total Biaya</label>
 
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                             <?php 
                                 $total = $d->biaya;
 
@@ -58,7 +70,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-sm-6 row">
                         <!-- <label class="col-sm-3 control-label">Resep<br></label> -->
                             <table class="table table-bordered">
                                 <tr>
@@ -73,20 +85,12 @@
                                 <?php endforeach; ?>
                             </table>
                     </div>
-                    <div class="col-lg-12 col-lg-offset-0">
-                        <hr/>
-                        <div class="form-group">
-                            <div class="col-sm-6">
-                                <button type="button" class="btn btn-primary my-5" onclick="javascript:history.go(-1)"><i class="fa fa-angle-left"></i> Kembali</button>
-                                <a class="btn btn-primary my-5" href="<?php echo base_url('pemeriksaan/cetak/'. $this->uri->segment(3)) ?>" target="_blank"><i class="fa fa-print"></i> Print</a>
-                                <!-- <button type="reset" class="btn btn-default my-5"><i class="fa fa-undo"></i> Reset</button> -->
-                                <!-- <button type="submit" class="btn btn-success my-5"><i class="fa fa-save"></i> Simpan</button> -->
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+</div>
+</body>
+</html>

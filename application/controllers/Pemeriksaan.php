@@ -52,6 +52,18 @@ class Pemeriksaan extends CI_Controller
         $this->load->view('pemeriksaan/detail', $data);
         $this->load->view('layouts/foot');
     }
+	
+	public function cetak($id) {
+        $data['d'] = $this->Pemeriksaan_model->get_detail($id);
+        
+        $data['d']->obat = $this->Obat_model->get_in(json_decode($data['d']->resep, false));
+        // print_r($data['d']);
+        if (empty($data)) {
+            redirect('pemeriksaan');
+        }
+		
+		$this->load->view('pemeriksaan/cetak', $data);
+	}
 
     public function hapus($id)
     {

@@ -34,3 +34,11 @@
 .skin-green .main-header .logo {
     background: #222d32 !important;
 }
+
+@media print{
+	.form-control {
+		/* border: none; */
+		/* background-color: #ced4da !important; */
+		
+	}
+}
