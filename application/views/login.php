@@ -40,6 +40,9 @@
     <p class="login-box-msg">Login Untuk Memulai</p>
 
     <form action="<?php echo base_url('auth/check') ?>" method="post">
+	<?php if ($this->session->flashdata('error')): ?>
+		<p class="text-center text-danger">Login Gagal</p>
+	<?php endif; ?>
       <div class="form-group has-feedback">
         <input type="text" name="username" class="form-control" placeholder="Kode Dokter/Admin" required>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

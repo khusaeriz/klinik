@@ -32,6 +32,8 @@ class Auth extends CI_Controller
 
             redirect('dashboard');
         }
+		
+		$this->session->set_flashdata('error', 'Gagal Login');
         
         redirect('auth/login');
     }
