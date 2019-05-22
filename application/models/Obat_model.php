@@ -8,8 +8,8 @@ class Obat_model extends MY_Model
 
     public function get_in($id = array())
     {
-        $query = $this->db->where_in($id)->get($this->table);
-
+        $query = $this->db->where_in($this->primary_key, $id)->get($this->table);
+		
         return $query->result();
     }
 }
