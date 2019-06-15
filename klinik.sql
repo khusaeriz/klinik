@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2019 at 06:28 AM
+-- Generation Time: Jun 15, 2019 at 09:21 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -42,8 +42,7 @@ CREATE TABLE `dokter` (
 --
 
 INSERT INTO `dokter` (`kd_dokter`, `password`, `nama`, `spesialis`, `no_telp`, `alamat`) VALUES
-('ANK-1', '', 'John Doe', 'Anak', '083721236', 'jl darmanaga raya no 120'),
-('THT-2', '', 'Diana Anindya', 'THT', '0817362816723', 'lorem ipsum dolor sit amet ');
+('ANK-2', '', 'Karina', 'ANAK', '081238213', 'aak');
 
 -- --------------------------------------------------------
 
@@ -118,7 +117,10 @@ INSERT INTO `pemeriksaan` (`kd_pemeriksaan`, `kd_pasien`, `kd_dokter`, `hasil_pe
 ('RM0003', 'P0001', 'THT-2', 'suram', 'cari hidup', 50000),
 ('RM0004', 'P0002', 'THT-2', 'Ada deh', '[\"AM-1\"]', 23232),
 ('RM190005', 'P0001', 'ANK-1', 'kb', '[\"AM-2\",\"PR-2333\"]', 32999),
-('RM1990006', 'P0001', 'THT-2', '2132asd', '[\"AM-2\"]', 231231);
+('RM1990006', 'P0001', 'THT-2', '2132asd', '[\"AM-2\"]', 231231),
+('RM19990007', 'P0002', 'ANK-2', 'sakit kronis', '[\"AM-2\"]', 0),
+('RM19999000', 'P0001', 'ANK-2', 'stroke', '[\"AC-1\",\"AM-1\",\"AM-2\",\"PR-2333\"]', 0),
+('RM19999900', 'P0001', 'ANK-2', 'kjhasd', '[\"AM-1\",\"AM-2\"]', 0);
 
 -- --------------------------------------------------------
 
@@ -129,15 +131,17 @@ INSERT INTO `pemeriksaan` (`kd_pemeriksaan`, `kd_pasien`, `kd_dokter`, `hasil_pe
 CREATE TABLE `user` (
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `nama` varchar(100) NOT NULL
+  `nama` varchar(100) NOT NULL,
+  `role` enum('admin','dokter') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`username`, `password`, `nama`) VALUES
-('admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrator');
+INSERT INTO `user` (`username`, `password`, `nama`, `role`) VALUES
+('admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', 'admin'),
+('ANK-2', 'b7a1bef48e489643e1899eb7f7884b9b', 'Karina', 'dokter');
 
 --
 -- Indexes for dumped tables

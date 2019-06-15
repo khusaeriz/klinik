@@ -29,13 +29,13 @@
                                 <input name="kd_pasien" value="<?php echo $d->nama_pasien ?>" class=" form-control" id="select-pasien" readonly>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <!--<div class="form-group">
                             <label class="col-sm-3 control-label">Biaya Pemeriksaan</label>
 
                             <div class="col-sm-9">
                             <input type="text" name="biaya" value="Rp. <?php echo number_format($d->biaya, 0, ',', '.') ?>" class="form-control" readonly>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Hasil Pemeriksaan</label>
 
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Total Biaya</label>
+                            <label class="col-sm-3 control-label">Total Biaya Obat</label>
 
                             <div class="col-sm-9">
                             <?php 

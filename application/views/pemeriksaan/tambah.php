@@ -31,13 +31,13 @@
                         </div>
                     </div>
                     <div class="col-lg-5">
-                        <div class="form-group">
+                        <!--<div class="form-group">
                             <label class="col-sm-3 control-label">Biaya</label>
 
                             <div class="col-sm-9">
                             <input type="number" name="biaya" class="form-control" placeholder="Rp. 000.000, 00" required>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Hasil Pemeriksaan</label>
 
