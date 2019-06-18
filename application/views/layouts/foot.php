@@ -72,7 +72,7 @@ $(document).ready(function() {
     $('.select2').select2();
 });
 </script>
-<script src="<?php echo base_url() ?>assets/js/main.js"></script>
+<script src="<?php echo base_url('assets/js/main.js?'. filemtime(FCPATH.'assets/js/main.js')) ?>"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
