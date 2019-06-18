@@ -110,11 +110,29 @@ class Dokter extends CI_Controller
 
     public function rules()
     {
-        $this->validation->set_rules('kd_dokter', 
-                                     'Kode Dokter', 
-                                     'required|is_unique[dokter.kd_dokter]', 
-                                     array(
-                                         'is_unique' => 'Kode Dokter Sudah Digunakan.')
-                                    );
+        $rules = array(
+            array(
+                'field' => 'kd_dokter',
+                'label' => 'Kode Dokter',
+                'rules' => 'required|is_unique[dokter.kd_dokter]'
+            ),
+            array(
+                'field' => 'nama',
+                'label' => 'Nama Dokter',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'password',
+                'label' => 'Password',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'spesialis',
+                'label' => 'Spesialis',
+                'rules' => 'required'
+            ),
+        );
+        
+        $this->validation->set_rules($rules);
     }
 }

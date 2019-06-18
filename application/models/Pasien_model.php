@@ -8,7 +8,7 @@ class Pasien_model extends MY_Model
 
     public function generate_kd_pasien()
     {
-        $num = $this->last()->id;
+        $num = $this->last();
         $kd = "P".str_pad($num+1, 4, "0", STR_PAD_LEFT);
 
         return $kd;
@@ -31,11 +31,14 @@ class Pasien_model extends MY_Model
 
     public function last()
     {
-        $q = $this->db->select('id')
-                    ->limit(1)
-                    ->order_by('id', 'descs')
+        $q = $this->db->limit(1)
+                    ->order_by('kd_pasien', 'desc')
                     ->get($this->table);
 
-        return $q->row();
+        if ($q->num_rows() < 1) {
+            return 1;
+        }
+        
+        return (int) substr($q->row()->kd_pasien, 3, 3);
     }
 }

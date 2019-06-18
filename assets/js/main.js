@@ -4,19 +4,25 @@ $(document).ready(function () {
     });
 
    $('.select2-dokter').select2({
-        placeholder: "Pilih Dokter",
+        placeholder: "Pilih Dokster",
         ajax: {
             url: window.baseUrl + "api/dokter/search",
             dataType: 'json',
             processResults: function (data) {
+                
                 return {
-                    results: $.map(data, function (item) {
-                        
-                        return {
+                    results: $.map(data.list, function (item) {
+                        var obj = {
                             text: item.nama,
                             slug: item.nama,
                             id: item.kd_dokter
                         }
+
+                        if (item.kd_dokter == data.active) {
+                            obj.selected = true
+                        }
+
+                        return obj
                     })
                 };
             }

@@ -19,20 +19,38 @@ class Pasien extends CI_Controller
         $this->load->view('layouts/foot');
     }
 
+    public function rekam_medis($kd_pasien)
+    {
+        $this->load->model('Pemeriksaan_model');
+        $data['list'] = $this->Pemeriksaan_model->rekam_medis($kd_pasien);
+        
+        $this->load->view('layouts/head');
+        $this->load->view('pasien/rekam_medis', $data);
+        $this->load->view('layouts/foot');
+    }
+
     public function tambah()
     {
+        $kd = $this->Pasien_model->generate_kd_pasien();
+
         $this->load->view('layouts/head');
-        $this->load->view('pasien/tambah');
+        $this->load->view('pasien/tambah', array('kd' => $kd));
         $this->load->view('layouts/foot');
     }
 
     public function insert()
     {
-        $data = $this->input->post();
-        $data['kd_pasien'] = $this->Pasien_model->generate_kd_pasien();
+        $this->rules();
 
-        $this->Pasien_model->insert($data);
-        redirect('pasien');
+        if ($this->validation->run() == false) {
+            $this->tambah();
+        } else {    
+            $data = $this->input->post();
+            $data['kd_pasien'] = $this->Pasien_model->generate_kd_pasien();
+
+            $this->Pasien_model->insert($data);
+            redirect('pasien');
+        }
     }
 
     public function edit($id)
@@ -61,5 +79,33 @@ class Pasien extends CI_Controller
     {
         $this->Pasien_model->delete($id);
         redirect('pasien');
+    }
+
+    public function rules()
+    {
+        $rules = array(
+            array(
+                'field' => 'kd_pasien',
+                'label' => 'Kode Pasien',
+                'rules' => 'required|is_unique[dokter.kd_dokter]'
+            ),
+            array(
+                'field' => 'nama',
+                'label' => 'Nama Pasien',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'jk',
+                'label' => 'Jenis Kelamin',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'tgl_lahir',
+                'label' => 'Tanggal Lahir',
+                'rules' => 'required'
+            ),
+        );
+
+        $this->validation->set_rules($rules);
     }
 }

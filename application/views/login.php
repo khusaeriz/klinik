@@ -38,17 +38,18 @@
   <!-- /.login-logo -->
   <div class="login-box-body border-bottom">
     <p class="login-box-msg">Login Untuk Memulai</p>
-
+	
     <form action="<?php echo base_url('auth/check') ?>" method="post">
+    <div id="app">
 	<?php if ($this->session->flashdata('error')): ?>
-		<p class="text-center text-danger">Login Gagal</p>
+		<span class="text-center text-danger"><p><?php echo $this->session->flashdata('error') ?></p></span>
 	<?php endif; ?>
       <div class="form-group has-feedback">
-        <input type="text" name="username" class="form-control" placeholder="Kode Dokter/Admin" required>
+        <input type="text" name="username" class="form-control" placeholder="Kode Dokter/Admin" >
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" name="password" class="form-control" placeholder="Password" required>
+        <input type="password" name="password" class="form-control" placeholder="Password" >
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
@@ -60,6 +61,7 @@
         </div>
         <!-- /.col -->
       </div>
+  </div>
     </form>
 
   </div>

@@ -27,11 +27,17 @@ class Obat extends CI_Controller
 
     public function insert()
     {
-        $data = $this->input->post();
-
-        $this->Obat_model->insert($data);
-
-        redirect('obat');
+        $this->rules();
+        
+        if ($this->validation->run() === false) {
+            $this->tambah();
+        } else {
+            $data = $this->input->post();
+    
+            $this->Obat_model->insert($data);
+    
+            redirect('obat');
+        }
     }
 
     public function edit($id)
@@ -70,5 +76,38 @@ class Obat extends CI_Controller
     {
         $this->Obat_model->delete($id);
         redirect('obat');
+    }
+
+    public function rules()
+    {
+        $rules = array(
+            array(
+                'field' => 'kd_obat',
+                'label' => 'Kode Obat',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'nama',
+                'label' => 'Nama Obat',
+                'rules' => 'required|min_length[3]'
+            ),
+            array(
+                'field' => 'harga',
+                'label' => 'Harga',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'tgl_expired',
+                'label' => 'Tanggal Expired',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'stok',
+                'label' => 'Stok Obat',
+                'rules' => 'required'
+            ),
+        );
+
+        $this->validation->set_rules($rules);
     }
 }

@@ -6,29 +6,38 @@
             </div>
             <div class="box-body">
                 <form action="<?php echo base_url('pasien/insert') ?>" method="post" class="form-horizontal">
+                <div id="app">
                 <div class="row">
+                    <div class="col-lg-12">
+                        <?php 
+
+                        if (validation_errors() != false) {
+                            echo validation_errors('<div class="text-danger">', "</div>"), "<hr>";
+                        }
+                        ?>
+                    </div>
                     <div class="col-lg-5">
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Kode Pasien</label>
 
                             <div class="col-sm-9">
-                            <input type="text" name="kd_pasien" class="form-control" placeholder="Auto Generate" readonly>
+                            <input type="text" name="kd_pasien" value="<?php echo $kd ?>" class="form-control" placeholder="Auto Generate" readonly>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Nama Pasien</label>
 
                             <div class="col-sm-9">
-                            <input type="text" name="nama" class="form-control" placeholder="Nama Pasien" required>
+                            <input type="text" name="nama" class="form-control" placeholder="Nama Pasien">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Jenis Kelamin</label>
 
                             <div class="col-sm-9">
-                                <input type="radio" name="jk" class="flat-green" value="L" id="jk_l" required> <label for="jk_l" class="font-light" required>Laki-laki</label>
+                                <input type="radio" name="jk" class="flat-green" value="L" id="jk_l"> <label for="jk_l" class="font-light">Laki-laki</label>
                                 &nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="jk" class="flat-green" value="P" id="jk_p" required> <label for="jk_p" class="font-light" required>Perempuan</label>
+                                <input type="radio" name="jk" class="flat-green" value="P" id="jk_p"> <label for="jk_p" class="font-light">Perempuan</label>
                             </div>
                         </div>
                     </div>
@@ -47,17 +56,17 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Tanggal Lahir</label>
-
-                            <div class="col-sm-9">
-                            <input type="date" name="tgl_lahir" class="form-control" placeholder="Tanggal Lahir">
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label class="col-sm-3 control-label">Alamat</label>
 
                             <div class="col-sm-9">
                                 <textarea name="alamat" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Tanggal Lahir</label>
+
+                            <div class="col-sm-9">
+                            <input type="date" name="tgl_lahir" class="form-control" placeholder="Tanggal Lahir">
                             </div>
                         </div>
                     </div>
@@ -72,8 +81,21 @@
                         </div>
                     </div>
                 </div>
+                </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+var app = new Vue({
+    el: '#app',
+    data: {
+        kd_pasien
+    },
+    methods: {
+
+    }
+});
+</script>

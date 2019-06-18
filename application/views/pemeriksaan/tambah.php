@@ -6,27 +6,37 @@
             </div>
             <div class="box-body">
                 <form action="<?php echo base_url('pemeriksaan/insert'); ?>" method="post" class="form-horizontal">
+                    <div class="col-lg-12">
+                        <?php 
+
+                        if (validation_errors() != false) {
+                            echo validation_errors('<div class="text-danger">', "</div>"), "<hr>";
+                        }
+                        ?>
+                    </div>
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Kode Pemeriksaan</label>
 
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Auto Generate" readonly>
+                            <input type="text" name="kd_pemeriksaan" class="form-control" value="<?php echo $kd ?>" placeholder="Auto Generate" readonly>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Kode Dokter</label>
 
                             <div class="col-sm-9">
-                                <select name="kd_dokter" class="select2-dokter form-control" required></select>
+                                <select name="kd_dokter" class="select2-dokter form-control">
+                                    <option value="<?php echo $this->session->userdata('user')->username ?>" selected><?php echo $this->session->userdata('user')->nama ?></option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Pasien</label>
 
                             <div class="col-sm-9">
-                                <select name="kd_pasien" class="select2-pasien form-control" id="select-pasien" required></select>
+                                <select name="kd_pasien" class="select2-pasien form-control" id="select-pasien" ></select>
                             </div>
                         </div>
                     </div>
@@ -35,7 +45,7 @@
                             <label class="col-sm-3 control-label">Biaya</label>
 
                             <div class="col-sm-9">
-                            <input type="number" name="biaya" class="form-control" placeholder="Rp. 000.000, 00" required>
+                            <input type="number" name="biaya" class="form-control" placeholder="Rp. 000.000, 00" >
                             </div>
                         </div> -->
                         <div class="form-group">
@@ -91,6 +101,7 @@
       <div class="modal-body">
 
         <form action="<?php echo base_url('api/pasien/add'); ?>" method="POST" id="form-add-pasien" class="form-horizontal">
+        <div id="app">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
@@ -120,16 +131,16 @@
                     <label class="col-sm-3 control-label">Nama Pasien</label>
 
                     <div class="col-sm-9">
-                    <input type="text" name="nama" class="form-control" placeholder="Nama Pasien" required>
+                    <input type="text" name="nama" class="form-control" placeholder="Nama Pasien" >
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Jenis Kelamin</label>
 
                     <div class="col-sm-9">
-                        <input type="radio" name="jk" class="flat-green" value="L" id="jk_l" required> <label for="jk_l" class="font-light">Laki-laki</label>
+                        <input type="radio" name="jk" class="flat-green" value="L" id="jk_l" > <label for="jk_l" class="font-light">Laki-laki</label>
                         &nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="jk" class="flat-green" value="P" id="jk_p" required> <label for="jk_p" class="font-light">Perempuan</label>
+                        <input type="radio" name="jk" class="flat-green" value="P" id="jk_p" > <label for="jk_p" class="font-light">Perempuan</label>
                     </div>
                 </div>
                 <div class="form-group">
@@ -146,6 +157,7 @@
                     </div>
                 </div>
             </div>
+            </div>
         </div>
       </div>
       <div class="modal-footer">
@@ -157,3 +169,7 @@
 
   </div>
 </div>
+
+<script>
+
+</script>

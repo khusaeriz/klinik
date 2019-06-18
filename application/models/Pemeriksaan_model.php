@@ -14,6 +14,14 @@ class Pemeriksaan_model extends MY_Model
         return $kd;
     }
 
+    public function rekam_medis($kd_pasien)
+    {
+        $q = $this->db->select('pemeriksaan.tgl_pemeriksaan')
+                    ->where('pemeriksaan.kd_pasien', $kd_pasien);
+        
+        return $this->get_all();
+    }
+
     public function get_detail($id)
     {
         $this->set_field(array(
@@ -34,6 +42,7 @@ class Pemeriksaan_model extends MY_Model
     {
         $this->set_field(array(
             'pemeriksaan.kd_pemeriksaan',
+            'pasien.kd_pasien',
             'pasien.nama as nama_pasien',
             'dokter.nama as nama_dokter',
             'pemeriksaan.hasil_pemeriksaan',
@@ -52,8 +61,10 @@ class Pemeriksaan_model extends MY_Model
                     ->order_by($this->primary_key, 'desc')
                     ->get($this->table);
 
-        $result = $query->row()->kd_pemeriksaan;
+        if ($query->num_rows() < 1) {
+            return 0;
+        }
 
-        return (int) substr($result, 3, strlen($result));
+        return  substr($query->row()->kd_pemeriksaan, 4, 4);
     }
 }

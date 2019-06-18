@@ -36,18 +36,29 @@ $(document).ready(function() {
       $('input[name="id"').iCheck('uncheck');
       $(this).find('input').iCheck('check');
 
-      var id = $(this).find('input').data('id');
+      var id = $(this).find('input').data('id')
+      var idPasien = $(this).find('input').data('id-pasien')
       
       $('.replace-url').each(function(index, el){
         
         if (id === undefined) {
           $(el).removeAttr('href').attr('disabled', true);
         } else {
-          var link = $(el).data('href')+id;
-          $(el).attr('href', link).attr('disabled', false);
+          var link = $(el).data('href')+id
+          $(el).attr('href', link).attr('disabled', false)
         }
-      });
-    });
+      })
+      
+      $('.replace-url-pasien').each(function(index, el){
+        
+        if (idPasien === undefined) {
+          $(el).removeAttr('href').attr('disabled', true);
+        } else {
+          var link = $(el).data('href')+idPasien
+          $(el).attr('href', link).attr('disabled', false)
+        }
+      })
+    })
 
     //Flat red color scheme for iCheck
     $('input[type="checkbox"].flat-green, input[type="radio"].flat-green').iCheck({

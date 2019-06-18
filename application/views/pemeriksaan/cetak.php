@@ -63,7 +63,9 @@
                                 $total = $d->biaya;
 
                                 foreach ($d->obat as $key => $value) {
-                                    $total += $value->harga;
+                                    if ($value->stok > 0) {
+                                        $total += $value->harga;
+                                    }
                                 }
                             ?>
                                 <input type="text" name="biaya" value="Rp. <?php echo number_format($total, 0, ',', '.') ?>" class="form-control" readonly>
@@ -80,7 +82,11 @@
                                 <?php foreach($d->obat as $key => $value): ?>
                                     <tr>
                                         <td class="text-center"><?php echo $value->nama ?></td>
-                                        <td class="text-center">Rp. <?php echo number_format($value->harga, 0, ',', '.') ?></td>
+                                        <?php if($value->stok > 0): ?>
+                                            <td class="text-center">Rp. <?php echo number_format($value->harga, 0, ',', '.') ?></td>
+                                        <?php else: ?>
+                                            <td class="text-center">Stok Habis</td>
+                                        <?php endif; ?>
                                     </tr>
                                 <?php endforeach; ?>
                             </table>

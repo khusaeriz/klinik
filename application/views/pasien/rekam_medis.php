@@ -3,13 +3,14 @@
           <div class="col-lg-12">
               <div class="box">
                   <div class="box-header with-border">
-                <h3 class="box-title"><i class="fa fa-users"></i> Data Pasien</h3>
+                <h3 class="box-title"><i class="fa fa-file"></i> Rekam Medis</h3>
                     <hr/>
                     <div>
-                      <a href="<?php echo base_url('Pasien/tambah') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
-                      <a data-href="<?php echo base_url('Pasien/edit/'); ?>" class="btn btn-warning replace-url" disabled="true"><i class="fa fa-edit"></i> Edit</a>
+                      <button type="button" class="btn btn-primary my-5" onclick="javascript:history.go(-1)"><i class="fa fa-arrow-left"></i> Kembali</button>
+                      <a href="<?php echo base_url('Pemeriksaan/tambah') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
+                      <!-- <a data-href="<?php echo base_url('Pasien/edit/'); ?>" class="btn btn-warning replace-url" disabled="true"><i class="fa fa-edit"></i> Edit</a>
                       <a data-href="<?php echo base_url('Pasien/rekam_medis/'); ?>" class="btn btn-primary replace-url" disabled><i class="fa fa-info-circle"></i> Rekam Medis</a>
-                      <a data-href="<?php echo base_url('Pasien/hapus/'); ?>" class="btn btn-danger replace-url" disabled="true"><i class="fa fa-trash"></i> Hapus</a>
+                      <a data-href="<?php echo base_url('Pasien/hapus/'); ?>" class="btn btn-danger replace-url" disabled="true"><i class="fa fa-trash"></i> Hapus</a> -->
                     </div>
                   </div>
                   <!-- /.box-header -->
@@ -17,22 +18,16 @@
                     <table class="table table-hover table-bordered table-selectable">
                       <tbody><tr>
                         <th style="width: 10px"></th>
-                        <th>Kd. Pasien</th>
-                        <th>Nama Pasien</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Tgl Lahir/Umur</th>
-                        <th>Gol. Darah</th>
+                        <th>No</th>
+                        <th>Hasil Pemeriksaan</th>
+                        <th>Tanggal Pemeriksaan</th>
                       </tr>
-                      <?php foreach ($pasien as $key => $value) : ?>
+                      <?php foreach ($list as $key => $value) : ?>
                       <tr>
-                        <td><input type="radio" name="id" data-id="<?php echo $value->kd_pasien?>" class="flat-green"></td>
-                        <td><?php echo $value->kd_pasien ?></td>
-                        <td><?php echo $value->nama ?></td>
-                        <td><?php echo $value->jk ?></td>
-                        <td><?php
-                          echo $value->tgl_lahir."/".$value->umur." thn";
-                        ?></td>
-                        <td><?php echo $value->gol_darah == "" ? "-" : $value->gol_darah ?></td>
+                        <td><input type="radio" name="id" data-id="<?php echo $key+1?>" class="flat-green"></td>
+                        <td><?php echo $key+1 ?></td>
+                        <td><?php echo $value->hasil_pemeriksaan ?></td>
+                        <td><?php echo date('d-M-Y', strtotime($value->tgl_pemeriksaan)) ?></td>
                       </tr>
                       <?php endforeach; ?>
                     </tbody></table>

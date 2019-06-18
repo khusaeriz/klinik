@@ -21,6 +21,7 @@ class Pemeriksaan extends CI_Controller
     public function tambah()
     {
         $data['obat'] = $this->Obat_model->get_all();
+        $data['kd']   = $this->Pemeriksaan_model->generate_kd_pemeriksaan();
 
         $this->load->view('layouts/head');
         $this->load->view('pemeriksaan/tambah', $data);
@@ -29,13 +30,20 @@ class Pemeriksaan extends CI_Controller
 
     public function insert()
     {
-        $data = $this->input->post();
-        $data['kd_pemeriksaan'] = $this->Pemeriksaan_model->generate_kd_pemeriksaan();
-        $data['resep'] = json_encode($data['resep']);
-        
-        $this->Pemeriksaan_model->insert($data);
+        $this->rules();
 
-        redirect('pemeriksaan');
+        if ($this->validation->run() == false) {
+            $this->tambah();
+        } else {    
+            $data = $this->input->post();
+            $data['kd_pemeriksaan'] = $this->Pemeriksaan_model->generate_kd_pemeriksaan();
+            $this->Obat_model->restokObat($data['resep'], 1);
+            $data['resep'] = json_encode($data['resep']);
+            
+            $this->Pemeriksaan_model->insert($data);
+
+            redirect('pemeriksaan');
+        }
     }
 
     public function detail($id)
@@ -69,5 +77,33 @@ class Pemeriksaan extends CI_Controller
     {
         $this->Pemeriksaan_model->delete($id);
         redirect('pemeriksaan');
+    }
+
+    public function rules()
+    {
+        $rules = array(
+            array(
+                'field' => 'kd_pemeriksaan',
+                'label' => 'Kode Pemeriksaan',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'kd_dokter',
+                'label' => 'Dokter',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'kd_pasien',
+                'label' => 'Pasien',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'hasil_pemeriksaan',
+                'label' => 'Hasil Pemeriksaan',
+                'rules' => 'required'
+            ),
+        );
+
+        $this->validation->set_rules($rules);
     }
 }

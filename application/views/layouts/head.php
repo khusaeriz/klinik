@@ -37,6 +37,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <script>window.baseUrl = '<?php echo base_url() ?>' ;</script>
+<script src="<?php echo base_url() ?>dist/js/vue.js"></script>
+<script src="<?php echo base_url() ?>dist/js/axios.js"></script>
 </head>
 <!--
 BODY TAG OPTIONS:

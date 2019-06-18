@@ -10,7 +10,7 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$lang['form_validation_required'] = 'Kolom {field} tidak boleh kosong.';
+$lang['form_validation_required'] = 'Kolom {field} harus tidak boleh kosong.';
 $lang['form_validation_isset'] = 'Kolom {field} harus memiliki nilai.';
 $lang['form_validation_valid_email'] = 'Kolom {field} harus berisi alamat email yang sah.';
 $lang['form_validation_valid_emails'] = 'Kolom {field} harus berisi semua alamat email yang sah.';

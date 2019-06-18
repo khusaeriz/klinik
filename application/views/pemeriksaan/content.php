@@ -8,6 +8,7 @@
                     <div>
 					<?php if ($this->session->userdata('user')->role == 'dokter') :?>
                       <a href="<?php echo base_url('Pemeriksaan/tambah') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
+                      <a data-href="<?php echo base_url('Pasien/rekam_medis/'); ?>" class="btn btn-primary replace-url-pasien" disabled><i class="fa fa-info-circle"></i> Rekam Medis</a>
 					<?php endif; ?>
                       <a data-href="<?php echo base_url('Pemeriksaan/detail/'); ?>" class="btn btn-warning replace-url" disabled="true"><i class="fa fa-eye"></i> Detail</a>
                       <!-- <a class="btn btn-warning" href=""><i class="fa fa-eye"></i> Detail</a> -->
@@ -30,7 +31,7 @@
                       </tr>
                       <?php foreach($pemeriksaan as $key => $value): ?>
                       <tr>
-                        <td><input type="radio" data-id="<?php echo $value->kd_pemeriksaan ?>" name="id" class="flat-green"></td>
+                        <td><input type="radio" data-id="<?php echo $value->kd_pemeriksaan ?>" data-id-pasien="<?php echo $value->kd_pasien ?>" name="id" class="flat-green"></td>
                         <td><?php echo $value->kd_pemeriksaan ?></td>
                         <td><?php echo $value->nama_pasien ?></td>
                         <td><?php echo $value->nama_dokter ?></td>
