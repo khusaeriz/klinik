@@ -6,21 +6,30 @@
             </div>
             <div class="box-body">
                 <form action="<?php echo base_url('obat/update') ?>" method="post" class="form-horizontal">
+                <div id="app">
                 <input type="hidden" name="kd_obat_old" value="<?php echo $d->kd_obat ?>">
                 <div class="row">
+                    <div class="col-lg-12">
+                        <?php 
+
+                        if (validation_errors() != false) {
+                            echo validation_errors('<div class="text-danger">', "</div>"), "<hr>";
+                        }
+                        ?>
+                    </div>
                     <div class="col-lg-5">
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Kode Obat</label>
 
                             <div class="col-sm-9">
-                            <input type="text" name="kd_obat" class="form-control" placeholder="Kode Obat" value="<?php echo $d->kd_obat ?>">
+                            <input v-model="kd_obat" type="text" name="kd_obat" class="form-control" placeholder="Kode Obat" value="<?php echo $d->kd_obat ?>" readonly>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Harga Obat</label>
+                            <label class="col-sm-3 control-label">Nama Obat</label>
 
                             <div class="col-sm-9">
-                            <input type="text" name="harga" class="form-control" placeholder="Harga Obat" value="<?php echo $d->harga ?>">
+                            <input v-model="nama" v-on:change="generateKode" type="text" name="nama" class="form-control" placeholder="Nama Obat">
                             </div>
                         </div>
                         <div class="form-group">
@@ -33,10 +42,10 @@
                     </div>
                     <div class="col-lg-5">
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Nama Obat</label>
+                            <label class="col-sm-3 control-label">Harga Obat</label>
 
                             <div class="col-sm-9">
-                            <input type="text" name="nama" class="form-control" placeholder="Nama Obat" value="<?php echo $d->nama ?>">
+                            <input type="text" name="harga" class="form-control" placeholder="Harga Obat" value="<?php echo $d->harga ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -58,8 +67,30 @@
                         </div>
                     </div>
                 </div>
+                </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+var app = new Vue({
+    el: '#app',
+    data: {
+        nama: '<?php echo $d->nama ?>',
+        kd_obat: '<?php echo $d->kd_obat ?>'
+    },
+    methods: {
+        generateKode: function (e) {
+            if (this.nama.length >= 3 ) {             
+                axios.get(baseUrl+'api/obat/generate_kode?nama='+this.nama)
+                    .then((res) => {
+                        console.log(res)
+                        this.kd_obat = res.data.kode
+                    })   
+            }
+        }
+    }
+})
+</script>

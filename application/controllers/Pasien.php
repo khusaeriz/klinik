@@ -68,11 +68,16 @@ class Pasien extends CI_Controller
 
     public function update()
     {
-        
+        $this->rules();
         $data   = $this->input->post();
 
-        $this->Pasien_model->update($data['kd_pasien'], $data);
-        redirect('pasien');
+        if ($this->validation->run() == false) {
+            $this->edit($data['kd_pasien']);
+        } else {
+            $this->Pasien_model->update($data['kd_pasien'], $data);
+            redirect('pasien');
+        }       
+
     }
 
     public function hapus($id)
@@ -87,7 +92,7 @@ class Pasien extends CI_Controller
             array(
                 'field' => 'kd_pasien',
                 'label' => 'Kode Pasien',
-                'rules' => 'required|is_unique[dokter.kd_dokter]'
+                'rules' => 'required'
             ),
             array(
                 'field' => 'nama',
@@ -97,6 +102,16 @@ class Pasien extends CI_Controller
             array(
                 'field' => 'jk',
                 'label' => 'Jenis Kelamin',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'gol_darah',
+                'label' => 'Golongan Darah',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'alamat',
+                'label' => 'Alamat',
                 'rules' => 'required'
             ),
             array(

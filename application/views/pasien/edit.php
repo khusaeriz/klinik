@@ -7,6 +7,14 @@
             <div class="box-body">
                 <form action="<?php echo base_url('pasien/update') ?>" method="post" class="form-horizontal">
                 <div class="row">
+                    <div class="col-lg-12">
+                        <?php 
+
+                        if (validation_errors() != false) {
+                            echo validation_errors('<div class="text-danger">', "</div>"), "<hr>";
+                        }
+                        ?>
+                    </div>
                     <div class="col-lg-5">
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Kode Pasien</label>
@@ -19,15 +27,15 @@
                             <label class="col-sm-3 control-label">Nama Pasien</label>
 
                             <div class="col-sm-9">
-                            <input type="text" name="nama" class="form-control" value="<?php echo $d->nama ?>" placeholder="Nama Pasien" required>
+                            <input type="text" name="nama" class="form-control" value="<?php echo $d->nama ?>" placeholder="Nama Pasien" >
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Jenis Kelamin</label>
                             <div class="col-sm-9">
-                                <input type="radio" name="jk" class="flat-green" value="L" id="jk_l" <?php echo $d->jk == "L" ? "checked" : '' ?> required> <label for="jk_l" class="font-light">Laki-laki</label>
+                                <input type="radio" name="jk" class="flat-green" value="L" id="jk_l" <?php echo $d->jk == "L" ? "checked" : '' ?> > <label for="jk_l" class="font-light">Laki-laki</label>
                                 &nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="jk" class="flat-green" value="P" id="jk_p" <?php echo $d->jk == "P" ? "checked" : '' ?> required> <label for="jk_p" class="font-light">Perempuan</label>
+                                <input type="radio" name="jk" class="flat-green" value="P" id="jk_p" <?php echo $d->jk == "P" ? "checked" : '' ?> > <label for="jk_p" class="font-light">Perempuan</label>
                             </div>
                         </div>
                     </div>

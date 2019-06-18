@@ -41,13 +41,13 @@
                                 <input name="kd_pasien" value="<?php echo $d->nama_pasien ?>" class=" form-control" id="select-pasien" readonly>
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label class="col-sm-4 control-label">Biaya Pemeriksaan</label>
 
                             <div class="col-sm-8">
                             <input type="text" name="biaya" value="Rp. <?php echo number_format($d->biaya, 0, ',', '.') ?>" class="form-control" readonly>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="form-group row">
                             <label class="col-sm-4 control-label">Hasil Pemeriksaan</label>
 

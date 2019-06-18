@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2019 at 04:34 PM
+-- Generation Time: Jun 19, 2019 at 12:43 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -52,7 +52,7 @@ INSERT INTO `dokter` (`kd_dokter`, `nama`, `spesialis`, `no_telp`, `alamat`) VAL
 --
 
 CREATE TABLE `obat` (
-  `kd_obat` varchar(10) NOT NULL,
+  `kd_obat` char(6) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `harga` int(6) NOT NULL,
   `tgl_expired` date NOT NULL,
@@ -74,7 +74,7 @@ INSERT INTO `obat` (`kd_obat`, `nama`, `harga`, `tgl_expired`, `stok`) VALUES
 --
 
 CREATE TABLE `pasien` (
-  `kd_pasien` varchar(10) NOT NULL,
+  `kd_pasien` char(5) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `tgl_lahir` date NOT NULL,
   `jk` char(1) NOT NULL,
@@ -98,10 +98,10 @@ INSERT INTO `pasien` (`kd_pasien`, `nama`, `tgl_lahir`, `jk`, `gol_darah`, `alam
 
 CREATE TABLE `pemeriksaan` (
   `kd_pemeriksaan` char(8) NOT NULL,
-  `kd_pasien` varchar(10) NOT NULL,
-  `kd_dokter` varchar(10) NOT NULL,
+  `kd_pasien` char(6) NOT NULL,
+  `kd_dokter` char(6) NOT NULL,
   `hasil_pemeriksaan` text NOT NULL,
-  `biaya` int(11) NOT NULL,
+  `biaya` int(6) NOT NULL,
   `resep` text NOT NULL,
   `tgl_pemeriksaan` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

@@ -131,6 +131,16 @@ class Dokter extends CI_Controller
                 'label' => 'Spesialis',
                 'rules' => 'required'
             ),
+            array(
+                'field' => 'no_telp',
+                'label' => 'Nomor Telepon',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'alamat',
+                'label' => 'Alamat',
+                'rules' => 'required'
+            ),
         );
         
         $this->validation->set_rules($rules);

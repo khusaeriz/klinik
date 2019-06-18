@@ -55,20 +55,26 @@ class Obat extends CI_Controller
 
     public function update()
     {        
+        $this->rules();
         $data   = $this->input->post();
         $id     = $data['kd_obat_old'];
 
-        unset($data['kd_obat_old']);
-
-        $check = $this->Obat_model->find(array('kd_obat' => $data['kd_obat']));
-        
-        if (!empty($check) && $check[0]->kd_obat !== $id) {
-            $this->session->set_flashdata('error', 'Kode dokter sudah dipakai');
+        if ($this->validation->run() == false) {
             $this->edit($id);
         } else {
-            $this->Obat_model->update($id, $data);
 
-            redirect('obat');
+            unset($data['kd_obat_old']);
+
+            $check = $this->Obat_model->find(array('kd_obat' => $data['kd_obat']));
+            
+            if (!empty($check) && $check[0]->kd_obat !== $id) {
+                $this->session->set_flashdata('error', 'Kode dokter sudah dipakai');
+                $this->edit($id);
+            } else {
+                $this->Obat_model->update($id, $data);
+
+                redirect('obat');
+            }
         }
     }
 
@@ -94,7 +100,7 @@ class Obat extends CI_Controller
             array(
                 'field' => 'harga',
                 'label' => 'Harga',
-                'rules' => 'required'
+                'rules' => 'required|numeric'
             ),
             array(
                 'field' => 'tgl_expired',
@@ -104,7 +110,7 @@ class Obat extends CI_Controller
             array(
                 'field' => 'stok',
                 'label' => 'Stok Obat',
-                'rules' => 'required'
+                'rules' => 'required|numeric|less_than[200]'
             ),
         );
 
