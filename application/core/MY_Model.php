@@ -102,7 +102,7 @@ class MY_Model extends CI_Model {
 		$query = $this->db->where($this->primary_key, $id);
 
 		if ($this->soft_delete && !$purge) {
-			$query->update($this->table, [$this->deleted_field => 1]);
+			$query->update($this->table, array($this->deleted_field => 1));
 		} else {
 			$query->delete($this->table);
 		}

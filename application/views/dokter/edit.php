@@ -27,6 +27,29 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="col-sm-3 control-label">Spesialis</label>
+
+                            <div class="col-sm-9">
+                            <input type="text" name="spesialis" class="form-control" placeholder="Spesialis" value="<?php echo spesialis($dokter->spesialis) ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Nama Dokter</label>
+
+                            <div class="col-sm-9">
+                            <input type="text" name="nama" class="form-control" placeholder="Nama Dokter" value="<?php echo $dokter->nama ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">No. Telp</label>
+
+                            <div class="col-sm-9">
+                            <input type="text" name="no_telp" class="form-control" placeholder="No. Telp"  value="<?php echo $dokter->no_telp ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="col-sm-3 control-label">Password</label>
 
                             <div class="col-sm-9">
@@ -38,29 +61,6 @@
 
                             <div class="col-sm-9">
                                 <textarea name="alamat" class="form-control"><?php echo $dokter->alamat ?></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Nama Dokter</label>
-
-                            <div class="col-sm-9">
-                            <input type="text" name="nama" class="form-control" placeholder="Nama Dokter" value="<?php echo $dokter->nama ?>">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Spesialis</label>
-
-                            <div class="col-sm-9">
-                            <input type="text" name="spesialis" class="form-control" placeholder="Spesialis" value="<?php echo $dokter->spesialis ?>">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">No. Telp</label>
-
-                            <div class="col-sm-9">
-                            <input type="text" name="no_telp" class="form-control" placeholder="No. Telp"  value="<?php echo $dokter->no_telp ?>">
                             </div>
                         </div>
                     </div>

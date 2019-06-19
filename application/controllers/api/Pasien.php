@@ -40,7 +40,7 @@ class Pasien extends CI_Controller
             $res = array(
                 'status'    => 'failed',
                 'error'     => 'gagal menambahkan data pasien',
-                'data'      => []
+                'data'      => array()
             );
         }
 

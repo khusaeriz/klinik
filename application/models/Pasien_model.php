@@ -16,7 +16,7 @@ class Pasien_model extends MY_Model
 
     public function hitung_umur($pasien)
     {
-        $return = [];
+        $return = array();
         $today = new DateTime(date('d-m-Y')); // hari ini
 
         foreach ($pasien as $key => $value) {
