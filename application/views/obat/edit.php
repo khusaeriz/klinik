@@ -29,7 +29,7 @@
                             <label class="col-sm-3 control-label">Nama Obat</label>
 
                             <div class="col-sm-9">
-                            <input v-model="nama" v-on:change="generateKode" type="text" name="nama" class="form-control" placeholder="Nama Obat">
+                            <input v-model="nama" v-on:keyup="generateKode" type="text" name="nama" class="form-control" placeholder="Nama Obat">
                             </div>
                         </div>
                         <div class="form-group">
