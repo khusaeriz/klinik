@@ -8,6 +8,7 @@
                 <form action="<?php echo base_url('dokter/update') ?>" method="post" class="form-horizontal">
 
                 <input type="hidden" name="kd_dokter_old" value="<?php echo $dokter->kd_dokter ?>">
+                <div id="app">
                 <div class="row">
                     <div class="col-lg-12">
                         <?php 
@@ -23,14 +24,19 @@
                             <label class="col-sm-3 control-label">Kode Dokter</label>
 
                             <div class="col-sm-9">
-                            <input type="text" name="kd_dokter" class="form-control" placeholder="Kode Dokter" value="<?php echo $dokter->kd_dokter ?>">
+                            <input v-model="kd_dokter" type="text" name="kd_dokter" class="form-control" placeholder="Kode Dokter" value="<?php echo $dokter->kd_dokter ?>" readonly>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Spesialis</label>
 
                             <div class="col-sm-9">
-                            <input type="text" name="spesialis" class="form-control" placeholder="Spesialis" value="<?php echo spesialis($dokter->spesialis) ?>">
+                                <select v-model="spesialis" v-on:change="getLastNumber" name="spesialis" class="form-control">
+                                <?php foreach(spesialis() as $key => $value): ?>
+                                    <option value="<?php echo $key ?>" <?php echo $key == $dokter->spesialis ? 'selected' : '' ?>><?php echo $value ?></option>                                
+                                <?php endforeach; ?>
+                                </select>
+                            <!-- <input type="text" name="spesialis" class="form-control" placeholder="Spesialis" value="<?php echo $dokter->spesialis ?>"> -->
                             </div>
                         </div>
                         <div class="form-group">
@@ -75,8 +81,27 @@
                         </div>
                     </div>
                 </div>
+                </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+var app = new Vue({
+    el: '#app',
+    data: {
+        spesialis: '<?php echo $dokter->spesialis ?>',
+        kd_dokter: '<?php echo $dokter->kd_dokter ?>'
+    },
+    methods: {
+        getLastNumber: function () {
+            axios.get(baseUrl+'api/dokter/get_last_number?spesialis='+this.spesialis)
+                .then((res) => {
+                    this.kd_dokter = this.spesialis + '-' + res.data.last_number
+                })
+        }
+    }
+});
+</script>

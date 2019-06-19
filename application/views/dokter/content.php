@@ -31,7 +31,7 @@
                         <td><input type="radio" name="id" data-id="<?php echo $value->kd_dokter ?>" class="flat-green"></td>
                         <td><?php echo $value->kd_dokter ?></td>
                         <td><?php echo $value->nama ?></td>
-                        <td><?php echo $value->spesialis ?></td>
+                        <td><?php echo spesialis($value->spesialis) ?></td>
                         <td><?php echo $value->no_telp ?></td>
                         <td><?php echo $value->alamat ?></td>
                       </tr>
