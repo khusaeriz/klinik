@@ -8,9 +8,9 @@
                     <div>
                       <button type="button" class="btn btn-primary my-5" onclick="javascript:history.go(-1)"><i class="fa fa-arrow-left"></i> Kembali</button>
                       <a href="<?php echo base_url('Pemeriksaan/tambah') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
-                      <!-- <a data-href="<?php echo base_url('Pasien/edit/'); ?>" class="btn btn-warning replace-url" disabled="true"><i class="fa fa-edit"></i> Edit</a>
-                      <a data-href="<?php echo base_url('Pasien/rekam_medis/'); ?>" class="btn btn-primary replace-url" disabled><i class="fa fa-info-circle"></i> Rekam Medis</a>
-                      <a data-href="<?php echo base_url('Pasien/hapus/'); ?>" class="btn btn-danger replace-url" disabled="true"><i class="fa fa-trash"></i> Hapus</a> -->
+                      <a href="<?php echo base_url('Pasien/cetak_rekam_medis/'. $this->uri->segment(3)); ?>" class="btn btn-warning" ><i class="fa fa-print"></i> Cetak</a>
+                      <!-- <a data-href="<?php echo base_url('Pasien/rekam_medis/'); ?>" class="btn btn-primary replace-url" disabled><i class="fa fa-info-circle"></i> Rekam Medis</a> -->
+                      <!-- <a data-href="<?php echo base_url('Pasien/hapus/'); ?>" class="btn btn-danger replace-url" disabled="true"><i class="fa fa-trash"></i> Hapus</a> -->
                     </div>
                   </div>
                   <!-- /.box-header -->

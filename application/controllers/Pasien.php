@@ -29,6 +29,15 @@ class Pasien extends CI_Controller
         $this->load->view('layouts/foot');
     }
 
+    public function cetak_rekam_medis($kd_pasien)
+    {
+        $this->load->model('Pemeriksaan_model');
+        $data['list'] = $this->Pemeriksaan_model->rekam_medis($kd_pasien);
+        $data['pasien'] = $this->Pasien_model->get_one($kd_pasien);
+        
+        $this->load->view('pasien/cetak_rekam_medis', $data);
+    }
+
     public function tambah()
     {
         $kd = $this->Pasien_model->generate_kd_pasien();
