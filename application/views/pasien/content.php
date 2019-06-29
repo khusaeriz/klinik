@@ -6,10 +6,12 @@
                 <h3 class="box-title"><i class="fa fa-users"></i> Data Pasien</h3>
                     <hr/>
                     <div>
+                    <?php if($this->session->userdata('user')->role != 'dokter'): ?>
                       <a href="<?php echo base_url('Pasien/tambah') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
                       <a data-href="<?php echo base_url('Pasien/edit/'); ?>" class="btn btn-warning replace-url" disabled="true"><i class="fa fa-edit"></i> Edit</a>
-                      <a data-href="<?php echo base_url('Pasien/rekam_medis/'); ?>" class="btn btn-primary replace-url" disabled><i class="fa fa-info-circle"></i> Rekam Medis</a>
                       <a data-href="<?php echo base_url('Pasien/hapus/'); ?>" class="btn btn-danger replace-url" disabled="true"><i class="fa fa-trash"></i> Hapus</a>
+                    <?php endif; ?>
+                      <a data-href="<?php echo base_url('Pasien/rekam_medis/'); ?>" class="btn btn-primary replace-url" disabled><i class="fa fa-info-circle"></i> Rekam Medis</a>
                     </div>
                   </div>
                   <!-- /.box-header -->
